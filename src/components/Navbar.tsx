@@ -11,11 +11,10 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigatePage }) => {
   const [isSurveyOpen, setIsSurveyOpen] = useState<boolean>(false);
   const [submitted, setSubmitted] = useState<boolean>(false);
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [form, setForm] = useState({ name: '', phone: '', location: '' });
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.phone) return;
 
@@ -25,26 +24,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigatePage }) =>
       Location: form.location,
       Page: activePage
     });
-
-    setIsSubmitting(true);
-    try {
-      // Dispatch to standardized backend API
-      await fetch('/api/survey', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: form.name,
-          phone: form.phone,
-          location: form.location,
-          serviceType: activePage
-        })
-      });
-    } catch (err) {
-      console.warn('API submission notice:', err);
-    } finally {
-      setIsSubmitting(false);
-      setSubmitted(true);
-    }
+    setSubmitted(true);
   };
 
   const navItems = [
@@ -291,10 +271,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigatePage }) =>
                     </div>
                     <button
                       type="submit"
-                      disabled={isSubmitting}
                       className="w-full mt-2 py-3.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-white font-medium text-sm transition-all shadow-sm cursor-pointer disabled:opacity-50"
                     >
-                      {isSubmitting ? 'Dispatching...' : 'Dispatch Technical Lead'}
+                      {'Dispatch Technical Lead'}
                     </button>
                   </form>
                 </div>

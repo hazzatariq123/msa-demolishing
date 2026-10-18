@@ -28,11 +28,10 @@ interface AboutPageProps {
 export const AboutPage: React.FC<AboutPageProps> = ({ onNavigatePage }) => {
   const [isSurveyModalOpen, setIsSurveyModalOpen] = useState<boolean>(false);
   const [surveySubmitted, setSurveySubmitted] = useState<boolean>(false);
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [surveyPhone, setSurveyPhone] = useState<string>('');
   const [surveyLocation, setSurveyLocation] = useState<string>('');
 
-  const handleHeroSurveySubmit = async (e: React.FormEvent) => {
+  const handleHeroSurveySubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!surveyPhone.trim()) return;
 
@@ -42,23 +41,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigatePage }) => {
       Page: 'About Us'
     });
 
-    setIsSubmitting(true);
-    try {
-      await fetch('/api/survey', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          phone: surveyPhone.trim(),
-          location: surveyLocation.trim(),
-          serviceType: 'about-consultation'
-        })
-      });
-    } catch (err) {
-      console.warn('Survey submission notice:', err);
-    } finally {
-      setIsSubmitting(false);
-      setSurveySubmitted(true);
-    }
+    setSurveySubmitted(true);
   };
 
   const CORE_VALUES = [
@@ -697,10 +680,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigatePage }) => {
 
                   <button
                     type="submit"
-                    disabled={isSubmitting}
                     className="w-full py-3 rounded-full bg-amber-500 hover:bg-amber-400 text-white font-medium text-sm transition-all shadow-sm active:scale-98 cursor-pointer mt-2 disabled:opacity-50"
                   >
-                    {isSubmitting ? 'Dispatching...' : 'Confirm Survey Request'}
+                    {'Confirm Survey Request'}
                   </button>
                 </form>
               )}

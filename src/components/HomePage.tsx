@@ -39,11 +39,10 @@ interface HomePageProps {
 export const HomePage: React.FC<HomePageProps> = ({ onNavigatePage }) => {
   const [isSurveyModalOpen, setIsSurveyModalOpen] = useState<boolean>(false);
   const [surveySubmitted, setSurveySubmitted] = useState<boolean>(false);
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [surveyPhone, setSurveyPhone] = useState<string>('');
   const [surveyLocation, setSurveyLocation] = useState<string>('');
 
-  const handleHeroSurveySubmit = async (e: React.FormEvent) => {
+  const handleHeroSurveySubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!surveyPhone.trim()) return;
 
@@ -53,23 +52,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigatePage }) => {
       Page: 'Home'
     });
 
-    setIsSubmitting(true);
-    try {
-      await fetch('/api/survey', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          phone: surveyPhone.trim(),
-          location: surveyLocation.trim(),
-          serviceType: 'home-survey'
-        })
-      });
-    } catch (err) {
-      console.warn('Survey submission notice:', err);
-    } finally {
-      setIsSubmitting(false);
-      setSurveySubmitted(true);
-    }
+    setSurveySubmitted(true);
   };
 
   const PRIMARY_SECTORS = [
@@ -288,10 +271,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigatePage }) => {
 
                       <button
                         type="submit"
-                        disabled={isSubmitting}
                         className="w-full mt-2 py-3.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-white font-medium text-sm transition-all shadow-sm active:scale-[0.99] cursor-pointer disabled:opacity-50"
                       >
-                        {isSubmitting ? 'Dispatching...' : 'Dispatch Engineering Survey Team'}
+                        {'Dispatch Engineering Survey Team'}
                       </button>
                     </form>
                   </div>

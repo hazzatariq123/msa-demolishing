@@ -40,18 +40,16 @@ export const ServiceLandingPage: React.FC<ServiceLandingPageProps> = ({ data }) 
   // Modal states for Hero Survey
   const [isSurveyModalOpen, setIsSurveyModalOpen] = useState<boolean>(false);
   const [surveySubmitted, setSurveySubmitted] = useState<boolean>(false);
-  const [isSubmittingSurvey, setIsSubmittingSurvey] = useState<boolean>(false);
   const [surveyPhone, setSurveyPhone] = useState<string>('');
   const [surveyLocation, setSurveyLocation] = useState<string>('');
 
   // Modal states for Sub-Service click
   const [selectedSubService, setSelectedSubService] = useState<SubServiceItem | null>(null);
   const [subInquirySent, setSubInquirySent] = useState<boolean>(false);
-  const [isSubmittingSub, setIsSubmittingSub] = useState<boolean>(false);
   const [subPhone, setSubPhone] = useState<string>('');
   const [subLocation, setSubLocation] = useState<string>('');
 
-  const handleHeroSurveySubmit = async (e: React.FormEvent) => {
+  const handleHeroSurveySubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!surveyPhone.trim()) return;
 
@@ -61,26 +59,10 @@ export const ServiceLandingPage: React.FC<ServiceLandingPageProps> = ({ data }) 
       Location: surveyLocation
     });
 
-    setIsSubmittingSurvey(true);
-    try {
-      await fetch('/api/survey', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          phone: surveyPhone.trim(),
-          location: surveyLocation.trim(),
-          serviceType: data.id
-        })
-      });
-    } catch (err) {
-      console.warn('Survey submission notice:', err);
-    } finally {
-      setIsSubmittingSurvey(false);
-      setSurveySubmitted(true);
-    }
+    setSurveySubmitted(true);
   };
 
-  const handleSubInquirySubmit = async (e: React.FormEvent) => {
+  const handleSubInquirySubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!subPhone.trim()) return;
 
@@ -90,23 +72,7 @@ export const ServiceLandingPage: React.FC<ServiceLandingPageProps> = ({ data }) 
       Location: subLocation
     });
 
-    setIsSubmittingSub(true);
-    try {
-      await fetch('/api/survey', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          phone: subPhone.trim(),
-          location: subLocation.trim(),
-          serviceType: `${data.id} - ${selectedSubService?.title || ''}`
-        })
-      });
-    } catch (err) {
-      console.warn('Sub inquiry submission notice:', err);
-    } finally {
-      setIsSubmittingSub(false);
-      setSubInquirySent(true);
-    }
+    setSubInquirySent(true);
   };
 
   return (
@@ -283,10 +249,9 @@ export const ServiceLandingPage: React.FC<ServiceLandingPageProps> = ({ data }) 
 
                       <button
                         type="submit"
-                        disabled={isSubmittingSurvey}
-                        className="w-full mt-2 py-3.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-white font-medium text-sm transition-all shadow-sm active:scale-[0.99] cursor-pointer disabled:opacity-50"
+                        className="w-full mt-2 py-3.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-white font-medium text-sm transition-all shadow-sm active:scale-[0.99] cursor-pointer"
                       >
-                        {isSubmittingSurvey ? 'Dispatching...' : 'Dispatch Engineering Survey Team'}
+                        {'Dispatch Engineering Survey Team'}
                       </button>
                     </form>
                   </div>
@@ -521,12 +486,9 @@ export const ServiceLandingPage: React.FC<ServiceLandingPageProps> = ({ data }) 
 
                       <button
                         type="submit"
-                        disabled={isSubmittingSub}
-                        className="w-full mt-2 py-3 rounded-lg bg-amber-500 hover:bg-amber-400 text-white font-medium text-sm transition-all shadow-sm cursor-pointer disabled:opacity-50"
+                        className="w-full mt-2 py-3 rounded-lg bg-amber-500 hover:bg-amber-400 text-white font-medium text-sm transition-all shadow-sm cursor-pointer"
                       >
-                        {isSubmittingSub
-                          ? 'Submitting...'
-                          : `Request Scope Brief for ${selectedSubService.title}`}
+                        {`Request Scope Brief for ${selectedSubService.title}`}
                       </button>
                     </form>
                   </div>

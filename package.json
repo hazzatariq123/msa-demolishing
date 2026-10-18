@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsx server.ts",
-    "build": "vite build",
+    "build": "vite build && node scripts/seo-files.mjs",
     "start": "cross-env NODE_ENV=production tsx server.ts",
     "lint": "tsc --noEmit",
     "format": "prettier --write .",
