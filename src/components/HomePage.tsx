@@ -183,7 +183,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigatePage }) => {
                 initial={{ opacity: 0, scale: 0.95, y: 16 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 16 }}
-                className="relative z-10 w-full max-w-lg bg-white text-neutral-900 rounded-2xl p-6 sm:p-8 shadow-2xl border border-neutral-200 text-left"
+                className="relative z-10 w-full max-w-lg bg-white text-neutral-900 rounded-2xl p-6 sm:p-8 shadow-2xl border border-neutral-200 text-left max-h-[92dvh] overflow-y-auto"
               >
                 <button
                   type="button"

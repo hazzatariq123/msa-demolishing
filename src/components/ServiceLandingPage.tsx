@@ -160,7 +160,7 @@ export const ServiceLandingPage: React.FC<ServiceLandingPageProps> = ({ data }) 
                 initial={{ opacity: 0, scale: 0.95, y: 16 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 16 }}
-                className="relative z-10 w-full max-w-lg bg-white text-neutral-900 rounded-2xl p-6 sm:p-8 shadow-2xl border border-neutral-200 text-left"
+                className="relative z-10 w-full max-w-lg bg-white text-neutral-900 rounded-2xl p-6 sm:p-8 shadow-2xl border border-neutral-200 text-left max-h-[92dvh] overflow-y-auto"
               >
                 <button
                   type="button"
@@ -291,7 +291,7 @@ export const ServiceLandingPage: React.FC<ServiceLandingPageProps> = ({ data }) 
       <section
         id="services"
         aria-labelledby="sub-services-heading"
-        className="relative w-full py-20 sm:py-28 bg-[#FAF9F5] border-t border-neutral-200/80 text-neutral-900 select-none [content-visibility:auto] [contain-intrinsic-size:auto_800px]"
+        className="relative w-full py-20 sm:py-28 bg-[#FAF9F5] border-t border-neutral-200/80 text-neutral-900 select-none"
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           {/* Section Heading and Text */}
@@ -385,13 +385,13 @@ export const ServiceLandingPage: React.FC<ServiceLandingPageProps> = ({ data }) 
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                className="relative w-full max-w-lg bg-white rounded-2xl p-6 sm:p-8 shadow-2xl border border-neutral-200 text-left overflow-hidden"
+                className="relative w-full max-w-lg bg-white rounded-2xl p-6 sm:p-8 shadow-2xl border border-neutral-200 text-left max-h-[92dvh] overflow-y-auto"
               >
                 <button
                   type="button"
                   onClick={() => setSelectedSubService(null)}
                   aria-label="Close sub-service modal"
-                  className="absolute top-5 right-5 p-1.5 rounded-full text-neutral-400 hover:text-neutral-900 hover:bg-neutral-100 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+                  className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white text-neutral-900 shadow-md hover:bg-neutral-100 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
                 >
                   <X className="w-5 h-5" aria-hidden="true" />
                 </button>

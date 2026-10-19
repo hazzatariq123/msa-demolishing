@@ -33,7 +33,7 @@ export const PortfolioSlider: React.FC<PortfolioSliderProps> = ({
   return (
     <section
       id="portfolio"
-      className="relative w-full py-24 sm:py-32 bg-white border-t border-neutral-200/90 text-neutral-900 [content-visibility:auto] [contain-intrinsic-size:auto_800px]"
+      className="relative w-full py-24 sm:py-32 bg-white border-t border-neutral-200/90 text-neutral-900"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
         {/* Section Header: Minimalist Editorial Typography */}
@@ -134,7 +134,7 @@ export const PortfolioSlider: React.FC<PortfolioSliderProps> = ({
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 15 }}
               transition={{ type: 'spring', damping: 28, stiffness: 300 }}
-              className="relative z-10 w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden border border-neutral-200 flex flex-col max-h-[90vh]"
+              className="relative z-10 w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden border border-neutral-200 flex flex-col max-h-[92dvh]"
             >
               {/* Close Button */}
               <button

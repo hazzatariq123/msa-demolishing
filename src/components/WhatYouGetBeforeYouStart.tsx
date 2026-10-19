@@ -25,7 +25,7 @@ export const WhatYouGetBeforeYouStart: React.FC<WhatYouGetBeforeYouStartProps> =
   return (
     <section
       id="before-you-start"
-      className="relative w-full py-24 sm:py-32 bg-white border-t border-neutral-200/90 text-neutral-900 overflow-hidden [content-visibility:auto] [contain-intrinsic-size:auto_800px]"
+      className="relative w-full py-24 sm:py-32 bg-white border-t border-neutral-200/90 text-neutral-900 overflow-hidden"
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
         {/* Section Header */}
@@ -272,7 +272,7 @@ export const WhatYouGetBeforeYouStart: React.FC<WhatYouGetBeforeYouStartProps> =
             role="dialog"
             aria-modal="true"
             aria-labelledby="sample-modal-title"
-            className="relative w-full max-w-lg bg-white rounded-2xl p-6 sm:p-8 shadow-2xl border border-neutral-200 text-left"
+            className="relative w-full max-w-lg bg-white rounded-2xl p-6 sm:p-8 shadow-2xl border border-neutral-200 text-left max-h-[92dvh] overflow-y-auto"
           >
             <div className="flex items-center justify-between pb-4 border-b border-neutral-100 mb-4">
               <h3 id="sample-modal-title" className="font-serif font-bold text-xl text-neutral-900">

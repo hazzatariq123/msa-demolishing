@@ -179,7 +179,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigatePage }) =>
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="relative w-full max-w-md bg-white rounded-3xl p-8 shadow-2xl border border-neutral-100 text-left"
+              className="relative w-full max-w-md bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-neutral-100 text-left max-h-[92dvh] overflow-y-auto"
             >
               <button
                 type="button"

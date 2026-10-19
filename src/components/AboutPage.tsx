@@ -570,7 +570,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigatePage }) => {
               initial={{ opacity: 0, scale: 0.95, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 10 }}
-              className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl border border-neutral-200 p-6 sm:p-8 z-10 text-left"
+              className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl border border-neutral-200 p-6 sm:p-8 z-10 text-left max-h-[92dvh] overflow-y-auto"
             >
               <div className="flex items-center justify-between pb-4 border-b border-neutral-100 mb-5">
                 <div>
