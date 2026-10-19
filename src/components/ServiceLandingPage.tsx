@@ -69,7 +69,7 @@ export const ServiceLandingPage: React.FC<ServiceLandingPageProps> = ({ data, on
     e.preventDefault();
     if (!subPhone.trim()) return;
 
-    sendToWhatsApp('Service Enquiry', {
+    sendToWhatsApp('Service Booking', {
       Service: `${data.navTitle} - ${selectedSubService?.title || ''}`,
       Phone: subPhone,
       Location: subLocation
@@ -359,14 +359,16 @@ export const ServiceLandingPage: React.FC<ServiceLandingPageProps> = ({ data, on
                     </p>
                   </div>
 
-                  <div className="pt-4 mt-3 border-t border-neutral-100 flex items-center justify-between">
-                    <span className="text-xs font-medium text-amber-600 group-hover:underline">
-                      View Scope
-                    </span>
-                    <ArrowUpRight
-                      className="w-4 h-4 text-neutral-400 group-hover:text-amber-600 transition-colors"
-                      aria-hidden="true"
-                    />
+                  <div className="pt-4 mt-3 border-t border-neutral-100">
+                    {/* Clicks bubble to the card, which opens the booking pop-up */}
+                    <button
+                      type="button"
+                      aria-label={`Book ${service.title}`}
+                      className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg bg-amber-500 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-amber-600 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2"
+                    >
+                      Book Service
+                      <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
+                    </button>
                   </div>
                 </div>
               </motion.article>
@@ -491,7 +493,7 @@ export const ServiceLandingPage: React.FC<ServiceLandingPageProps> = ({ data, on
                         type="submit"
                         className="w-full mt-2 py-3 rounded-lg bg-amber-500 hover:bg-amber-400 text-white font-medium text-sm transition-all shadow-sm cursor-pointer"
                       >
-                        {`Request Scope Brief for ${selectedSubService.title}`}
+                        {`Book ${selectedSubService.title}`}
                       </button>
                     </form>
                   </div>
@@ -501,11 +503,11 @@ export const ServiceLandingPage: React.FC<ServiceLandingPageProps> = ({ data, on
                       <CheckCircle2 className="w-6 h-6" aria-hidden="true" />
                     </div>
                     <h3 className="text-xl font-serif font-medium text-neutral-950 mb-2">
-                      Scope Request Received
+                      Booking Request Ready
                     </h3>
                     <p className="text-sm text-neutral-600 font-light mb-5 max-w-xs mx-auto">
-                      Our lead engineer for {data.navTitle} will review your site requirements and
-                      contact you promptly.
+                      WhatsApp has opened with your booking details. Press send and our lead
+                      engineer for {data.navTitle} will contact you promptly.
                     </p>
                     <button
                       type="button"
