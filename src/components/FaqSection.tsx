@@ -11,7 +11,7 @@ export const FaqSection: React.FC<{ pageId: string }> = ({ pageId }) => {
     <section
       id="faq"
       aria-labelledby={`faq-heading-${pageId}`}
-      className="w-full bg-white border-t border-neutral-200/80 py-16 sm:py-20"
+      className="w-full bg-white border-t border-neutral-200/80 py-16 sm:py-20 [content-visibility:auto] [contain-intrinsic-size:auto_800px]"
     >
       <div className="max-w-3xl mx-auto px-6 sm:px-10">
         <h2

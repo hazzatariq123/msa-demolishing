@@ -15,6 +15,7 @@ import { srcSetFor, CARD_SIZES } from '../utils/img';
 import { sendToWhatsApp } from '../utils/whatsapp';
 import { FaqSection } from './FaqSection';
 import { RelatedServices } from './RelatedServices';
+import { ModalPortal } from './ModalPortal';
 
 const HomeEnquirySection = lazy(() =>
   import('./HomeEnquirySection').then((m) => ({ default: m.HomeEnquirySection }))
@@ -294,7 +295,7 @@ export const ServiceLandingPage: React.FC<ServiceLandingPageProps> = ({ data, on
       <section
         id="services"
         aria-labelledby="sub-services-heading"
-        className="relative w-full py-20 sm:py-28 bg-[#FAF9F5] border-t border-neutral-200/80 text-neutral-900 select-none"
+        className="relative w-full py-20 sm:py-28 bg-[#FAF9F5] border-t border-neutral-200/80 text-neutral-900 select-none [content-visibility:auto] [contain-intrinsic-size:auto_800px]"
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           {/* Section Heading and Text */}
@@ -377,156 +378,158 @@ export const ServiceLandingPage: React.FC<ServiceLandingPageProps> = ({ data, on
         </div>
 
         {/* Sub-Service Scope Modal */}
-        <AnimatePresence>
-          {selectedSubService && (
-            <div
-              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-neutral-950/60 backdrop-blur-sm"
-              role="presentation"
-            >
-              <motion.div
-                role="dialog"
-                aria-modal="true"
-                aria-labelledby="sub-service-scope-title"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                className="relative w-full max-w-lg bg-white rounded-2xl p-6 sm:p-8 shadow-2xl border border-neutral-200 text-left max-h-[92dvh] overflow-y-auto"
+        <ModalPortal>
+          <AnimatePresence>
+            {selectedSubService && (
+              <div
+                className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-neutral-950/60 backdrop-blur-sm"
+                role="presentation"
               >
-                <button
-                  type="button"
-                  onClick={() => setSelectedSubService(null)}
-                  aria-label="Close sub-service modal"
-                  className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white text-neutral-900 shadow-md hover:bg-neutral-100 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+                <motion.div
+                  role="dialog"
+                  aria-modal="true"
+                  aria-labelledby="sub-service-scope-title"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  className="relative w-full max-w-lg bg-white rounded-2xl p-6 sm:p-8 shadow-2xl border border-neutral-200 text-left max-h-[92dvh] overflow-y-auto"
                 >
-                  <X className="w-5 h-5" aria-hidden="true" />
-                </button>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedSubService(null)}
+                    aria-label="Close sub-service modal"
+                    className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white text-neutral-900 shadow-md hover:bg-neutral-100 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+                  >
+                    <X className="w-5 h-5" aria-hidden="true" />
+                  </button>
 
-                <div className="aspect-[16/9] w-full rounded-xl overflow-hidden mb-5 bg-neutral-100">
-                  <img
-                    loading="lazy"
-                    decoding="async"
-                    width={1280}
-                    height={800}
-                    src={selectedSubService.image}
-                    srcSet={srcSetFor(selectedSubService.image)}
-                    sizes={CARD_SIZES}
-                    alt={`${selectedSubService.title} - Scope specifications`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                  <div className="aspect-[16/9] w-full rounded-xl overflow-hidden mb-5 bg-neutral-100">
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      width={1280}
+                      height={800}
+                      src={selectedSubService.image}
+                      srcSet={srcSetFor(selectedSubService.image)}
+                      sizes={CARD_SIZES}
+                      alt={`${selectedSubService.title} - Scope specifications`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
 
-                {!subInquirySent ? (
-                  <div>
-                    <span className="text-xs font-mono uppercase tracking-wider text-amber-600 font-semibold block mb-1">
-                      MSA Demolishing · Sub-Service
-                    </span>
-                    <h3
-                      id="sub-service-scope-title"
-                      className="text-2xl font-serif font-medium text-neutral-950 mb-2"
-                    >
-                      {selectedSubService.title}
-                    </h3>
-                    <p className="text-sm text-neutral-600 font-light mb-6">
-                      {selectedSubService.scopeDescription}
-                    </p>
-
-                    <form onSubmit={handleSubInquirySubmit} className="space-y-3.5">
-                      <div>
-                        <label
-                          htmlFor="sub-service-location"
-                          className="block text-xs font-mono uppercase text-neutral-500 mb-1"
-                        >
-                          Site Location in UAE{' '}
-                          <span className="text-amber-600" aria-hidden="true">
-                            *
-                          </span>
-                        </label>
-                        <div className="relative">
-                          <MapPin
-                            className="w-4 h-4 text-neutral-400 absolute left-3 top-3"
-                            aria-hidden="true"
-                          />
-                          <input
-                            id="sub-service-location"
-                            type="text"
-                            required
-                            aria-required="true"
-                            autoComplete="street-address"
-                            value={subLocation}
-                            onChange={(e) => setSubLocation(e.target.value)}
-                            placeholder="e.g. Dubai Marina, JAFZA, Abu Dhabi"
-                            className="w-full bg-neutral-50 border border-neutral-200 rounded-lg pl-9 pr-3 py-2 text-sm text-neutral-900 focus:outline-none focus:border-amber-500"
-                          />
-                        </div>
-                      </div>
-
-                      <div>
-                        <label
-                          htmlFor="sub-service-phone"
-                          className="block text-xs font-mono uppercase text-neutral-500 mb-1"
-                        >
-                          Contact Phone / WhatsApp{' '}
-                          <span className="text-amber-600" aria-hidden="true">
-                            *
-                          </span>
-                        </label>
-                        <div className="relative">
-                          <Phone
-                            className="w-4 h-4 text-neutral-400 absolute left-3 top-3"
-                            aria-hidden="true"
-                          />
-                          <input
-                            id="sub-service-phone"
-                            type="tel"
-                            required
-                            aria-required="true"
-                            autoComplete="tel"
-                            value={subPhone}
-                            onChange={(e) => setSubPhone(e.target.value)}
-                            placeholder="+971 50 000 0000"
-                            className="w-full bg-neutral-50 border border-neutral-200 rounded-lg pl-9 pr-3 py-2 text-sm text-neutral-900 focus:outline-none focus:border-amber-500"
-                          />
-                        </div>
-                      </div>
-
-                      <button
-                        type="submit"
-                        className="w-full mt-2 py-3 rounded-lg bg-amber-500 hover:bg-amber-400 text-white font-medium text-sm transition-all shadow-sm cursor-pointer"
+                  {!subInquirySent ? (
+                    <div>
+                      <span className="text-xs font-mono uppercase tracking-wider text-amber-600 font-semibold block mb-1">
+                        MSA Demolishing · Sub-Service
+                      </span>
+                      <h3
+                        id="sub-service-scope-title"
+                        className="text-2xl font-serif font-medium text-neutral-950 mb-2"
                       >
-                        {`Book ${selectedSubService.title}`}
-                      </button>
-                    </form>
-                  </div>
-                ) : (
-                  <div className="py-6 text-center">
-                    <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-3">
-                      <CheckCircle2 className="w-6 h-6" aria-hidden="true" />
+                        {selectedSubService.title}
+                      </h3>
+                      <p className="text-sm text-neutral-600 font-light mb-6">
+                        {selectedSubService.scopeDescription}
+                      </p>
+
+                      <form onSubmit={handleSubInquirySubmit} className="space-y-3.5">
+                        <div>
+                          <label
+                            htmlFor="sub-service-location"
+                            className="block text-xs font-mono uppercase text-neutral-500 mb-1"
+                          >
+                            Site Location in UAE{' '}
+                            <span className="text-amber-600" aria-hidden="true">
+                              *
+                            </span>
+                          </label>
+                          <div className="relative">
+                            <MapPin
+                              className="w-4 h-4 text-neutral-400 absolute left-3 top-3"
+                              aria-hidden="true"
+                            />
+                            <input
+                              id="sub-service-location"
+                              type="text"
+                              required
+                              aria-required="true"
+                              autoComplete="street-address"
+                              value={subLocation}
+                              onChange={(e) => setSubLocation(e.target.value)}
+                              placeholder="e.g. Dubai Marina, JAFZA, Abu Dhabi"
+                              className="w-full bg-neutral-50 border border-neutral-200 rounded-lg pl-9 pr-3 py-2 text-sm text-neutral-900 focus:outline-none focus:border-amber-500"
+                            />
+                          </div>
+                        </div>
+
+                        <div>
+                          <label
+                            htmlFor="sub-service-phone"
+                            className="block text-xs font-mono uppercase text-neutral-500 mb-1"
+                          >
+                            Contact Phone / WhatsApp{' '}
+                            <span className="text-amber-600" aria-hidden="true">
+                              *
+                            </span>
+                          </label>
+                          <div className="relative">
+                            <Phone
+                              className="w-4 h-4 text-neutral-400 absolute left-3 top-3"
+                              aria-hidden="true"
+                            />
+                            <input
+                              id="sub-service-phone"
+                              type="tel"
+                              required
+                              aria-required="true"
+                              autoComplete="tel"
+                              value={subPhone}
+                              onChange={(e) => setSubPhone(e.target.value)}
+                              placeholder="+971 50 000 0000"
+                              className="w-full bg-neutral-50 border border-neutral-200 rounded-lg pl-9 pr-3 py-2 text-sm text-neutral-900 focus:outline-none focus:border-amber-500"
+                            />
+                          </div>
+                        </div>
+
+                        <button
+                          type="submit"
+                          className="w-full mt-2 py-3 rounded-lg bg-amber-500 hover:bg-amber-400 text-white font-medium text-sm transition-all shadow-sm cursor-pointer"
+                        >
+                          {`Book ${selectedSubService.title}`}
+                        </button>
+                      </form>
                     </div>
-                    <h3 className="text-xl font-serif font-medium text-neutral-950 mb-2">
-                      Booking Request Ready
-                    </h3>
-                    <p className="text-sm text-neutral-600 font-light mb-5 max-w-xs mx-auto">
-                      WhatsApp has opened with your booking details. Press send and our lead
-                      engineer for {data.navTitle} will contact you promptly.
-                    </p>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setSelectedSubService(null);
-                        setSubInquirySent(false);
-                        setSubPhone('');
-                        setSubLocation('');
-                      }}
-                      className="px-5 py-2 rounded-lg bg-neutral-100 hover:bg-neutral-200 text-neutral-800 text-xs font-mono uppercase tracking-wider transition-colors cursor-pointer"
-                    >
-                      Close
-                    </button>
-                  </div>
-                )}
-              </motion.div>
-            </div>
-          )}
-        </AnimatePresence>
+                  ) : (
+                    <div className="py-6 text-center">
+                      <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-3">
+                        <CheckCircle2 className="w-6 h-6" aria-hidden="true" />
+                      </div>
+                      <h3 className="text-xl font-serif font-medium text-neutral-950 mb-2">
+                        Booking Request Ready
+                      </h3>
+                      <p className="text-sm text-neutral-600 font-light mb-5 max-w-xs mx-auto">
+                        WhatsApp has opened with your booking details. Press send and our lead
+                        engineer for {data.navTitle} will contact you promptly.
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setSelectedSubService(null);
+                          setSubInquirySent(false);
+                          setSubPhone('');
+                          setSubLocation('');
+                        }}
+                        className="px-5 py-2 rounded-lg bg-neutral-100 hover:bg-neutral-200 text-neutral-800 text-xs font-mono uppercase tracking-wider transition-colors cursor-pointer"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  )}
+                </motion.div>
+              </div>
+            )}
+          </AnimatePresence>
+        </ModalPortal>
       </section>
 
       <Suspense fallback={<SectionFallback />}>

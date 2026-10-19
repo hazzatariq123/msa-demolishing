@@ -13,7 +13,7 @@ export const RelatedServices: React.FC<{
   return (
     <section
       aria-labelledby="related-services-heading"
-      className="w-full bg-[#FAF9F5] border-t border-neutral-200/80 py-16 sm:py-20"
+      className="w-full bg-[#FAF9F5] border-t border-neutral-200/80 py-16 sm:py-20 [content-visibility:auto] [contain-intrinsic-size:auto_800px]"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
         <h2

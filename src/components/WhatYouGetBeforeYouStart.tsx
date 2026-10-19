@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { m as motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import { srcSetFor, CARD_SIZES } from '../utils/img';
+import { ModalPortal } from './ModalPortal';
 
 const inspectionImg = '/images/free-demolition-site-inspection.webp';
 const permitImg = '/images/demolition-permit-management.webp';
@@ -27,7 +28,7 @@ export const WhatYouGetBeforeYouStart: React.FC<WhatYouGetBeforeYouStartProps> =
   return (
     <section
       id="before-you-start"
-      className="relative w-full py-24 sm:py-32 bg-white border-t border-neutral-200/90 text-neutral-900 overflow-hidden"
+      className="relative w-full py-24 sm:py-32 bg-white border-t border-neutral-200/90 text-neutral-900 overflow-hidden [content-visibility:auto] [contain-intrinsic-size:auto_800px]"
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
         {/* Section Header */}
@@ -271,45 +272,50 @@ export const WhatYouGetBeforeYouStart: React.FC<WhatYouGetBeforeYouStartProps> =
       </div>
 
       {/* Detail Modal */}
-      {sampleModalOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-neutral-950/70 backdrop-blur-sm animate-in fade-in duration-200"
-          role="presentation"
-        >
+      <ModalPortal>
+        {sampleModalOpen && (
           <div
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="sample-modal-title"
-            className="relative w-full max-w-lg bg-white rounded-2xl p-6 sm:p-8 shadow-2xl border border-neutral-200 text-left max-h-[92dvh] overflow-y-auto"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-neutral-950/70 backdrop-blur-sm animate-in fade-in duration-200"
+            role="presentation"
           >
-            <div className="flex items-center justify-between pb-4 border-b border-neutral-100 mb-4">
-              <h3 id="sample-modal-title" className="font-serif font-bold text-xl text-neutral-900">
-                {modalTitle}
-              </h3>
-              <button
-                type="button"
-                onClick={() => setSampleModalOpen(false)}
-                aria-label="Close dialog"
-                className="p-1.5 rounded-full text-neutral-400 hover:text-neutral-700 hover:bg-neutral-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
-              >
-                ✕
-              </button>
-            </div>
-            <p className="text-sm sm:text-base text-neutral-600 leading-relaxed mb-6">
-              {modalDescription}
-            </p>
-            <div className="flex justify-end gap-3">
-              <button
-                type="button"
-                onClick={() => setSampleModalOpen(false)}
-                className="px-4 py-2 text-xs font-semibold rounded-lg bg-neutral-900 text-white hover:bg-neutral-800 transition-colors"
-              >
-                Close Window
-              </button>
+            <div
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="sample-modal-title"
+              className="relative w-full max-w-lg bg-white rounded-2xl p-6 sm:p-8 shadow-2xl border border-neutral-200 text-left max-h-[92dvh] overflow-y-auto"
+            >
+              <div className="flex items-center justify-between pb-4 border-b border-neutral-100 mb-4">
+                <h3
+                  id="sample-modal-title"
+                  className="font-serif font-bold text-xl text-neutral-900"
+                >
+                  {modalTitle}
+                </h3>
+                <button
+                  type="button"
+                  onClick={() => setSampleModalOpen(false)}
+                  aria-label="Close dialog"
+                  className="p-1.5 rounded-full text-neutral-400 hover:text-neutral-700 hover:bg-neutral-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+                >
+                  ✕
+                </button>
+              </div>
+              <p className="text-sm sm:text-base text-neutral-600 leading-relaxed mb-6">
+                {modalDescription}
+              </p>
+              <div className="flex justify-end gap-3">
+                <button
+                  type="button"
+                  onClick={() => setSampleModalOpen(false)}
+                  className="px-4 py-2 text-xs font-semibold rounded-lg bg-neutral-900 text-white hover:bg-neutral-800 transition-colors"
+                >
+                  Close Window
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </ModalPortal>
     </section>
   );
 };
