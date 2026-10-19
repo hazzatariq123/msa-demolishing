@@ -2,6 +2,6 @@
 export const smallSrc = (src: string): string => src.replace(/\.webp$/, '-640.webp');
 
 export const srcSetFor = (src: string): string =>
-  `${smallSrc(src)} 640w, ${src.replace(/\.webp$/, '-828.webp')} 828w, ${src} 1280w`;
+  `${smallSrc(src)} 640w, ${src.replace(/\.webp$/, '-750.webp')} 750w, ${src.replace(/\.webp$/, '-828.webp')} 828w, ${src} 1280w`;
 
 export const CARD_SIZES = '(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw';

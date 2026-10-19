@@ -99,7 +99,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigatePage }) => {
         <div className="absolute inset-0 z-0">
           <img
             src="/images/about_us_engineers_1791866089032.webp"
-            srcSet="/images/about_us_engineers_1791866089032-640.webp 640w, /images/about_us_engineers_1791866089032-828.webp 828w, /images/about_us_engineers_1791866089032.webp 1280w"
+            srcSet="/images/about_us_engineers_1791866089032-640.webp 640w, /images/about_us_engineers_1791866089032-750.webp 750w, /images/about_us_engineers_1791866089032-828.webp 828w, /images/about_us_engineers_1791866089032.webp 1280w"
             sizes="100vw"
             width={1280}
             height={714}

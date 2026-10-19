@@ -86,7 +86,7 @@ export const ServiceLandingPage: React.FC<ServiceLandingPageProps> = ({ data }) 
         <div className="absolute inset-0 z-0">
           <img
             src={data.heroImage}
-            srcSet={`${data.heroImage.replace('.webp', '-640.webp')} 640w, ${data.heroImage.replace('.webp', '-828.webp')} 828w, ${data.heroImage} 1280w`}
+            srcSet={`${data.heroImage.replace('.webp', '-640.webp')} 640w, ${data.heroImage.replace('.webp', '-750.webp')} 750w, ${data.heroImage.replace('.webp', '-828.webp')} 828w, ${data.heroImage} 1280w`}
             sizes="100vw"
             width={1280}
             height={714}

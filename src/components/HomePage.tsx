@@ -109,7 +109,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigatePage }) => {
         <div className="absolute inset-0 z-0">
           <img
             src="/images/hero_building_demolition_1791830585768.webp"
-            srcSet="/images/hero_building_demolition_1791830585768-640.webp 640w, /images/hero_building_demolition_1791830585768-828.webp 828w, /images/hero_building_demolition_1791830585768.webp 1280w"
+            srcSet="/images/hero_building_demolition_1791830585768-640.webp 640w, /images/hero_building_demolition_1791830585768-750.webp 750w, /images/hero_building_demolition_1791830585768-828.webp 828w, /images/hero_building_demolition_1791830585768.webp 1280w"
             sizes="100vw"
             width={1280}
             height={714}

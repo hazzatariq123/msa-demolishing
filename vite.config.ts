@@ -30,7 +30,7 @@ function deferAppBundle(): Plugin {
         `<script>(function(){var H=${JSON.stringify(heroes)};` +
         `var k=location.hash.slice(1),c=H[k];if(!c)k="building-demolition",c=H[k];` +
         `var s=document.querySelector(".sh-hero");if(!s)return;var img=s.querySelector("img"),b=c.i.replace(/\\.webp$/,"");` +
-        `img.sizes="100vw";img.srcset=b+"-640.webp 640w, "+b+"-828.webp 828w, "+b+".webp 1280w";img.src=c.i;img.alt=c.t;` +
+        `img.sizes="100vw";img.srcset=b+"-640.webp 640w, "+b+"-750.webp 750w, "+b+"-828.webp 828w, "+b+".webp 1280w";img.src=c.i;img.alt=c.t;` +
         `s.setAttribute("aria-label",c.l+" Introduction");` +
         `if(k!=="building-demolition"){s.querySelector(".sh-eyebrow").textContent=c.e;s.querySelector(".sh-h1").textContent=c.t;s.querySelector(".sh-p").textContent=c.d}})()</script>`;
       const loader =
