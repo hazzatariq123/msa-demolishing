@@ -8,6 +8,7 @@ import { LazyMotion } from 'motion/react';
 import { Navbar } from './components/Navbar';
 import { ServiceLandingPage } from './components/ServiceLandingPage';
 import { ALL_SERVICES_DATA } from './data/servicesData';
+import { pageFromLegacyHash, pageFromPath, pageHref } from './data/routes';
 import { Footer } from './components/Footer';
 import { FloatingContact } from './components/FloatingContact';
 import { applyPageSEO } from './utils/seo';
@@ -21,42 +22,37 @@ const AboutPage = lazy(() =>
 );
 const loadMotionFeatures = () => import('./motionFeatures').then((m) => m.default);
 
-export default function App() {
-  // Support hash routing or internal state
-  const [activePage, setActivePage] = useState<string>(() => {
-    if (typeof window === 'undefined') return 'building-demolition';
-    const hash = window.location.hash.replace('#', '');
-    if (
-      hash &&
-      (hash === 'home' || hash === 'about' || hash === 'contact' || ALL_SERVICES_DATA[hash])
-    ) {
-      return hash;
-    }
-    return 'building-demolition'; // Featured primary demolition view
-  });
+const currentPage = (): string => {
+  if (typeof window === 'undefined') return 'home';
+  // Old links used /#about style addresses: map them to the real page.
+  const legacy = pageFromLegacyHash(window.location.hash);
+  if (legacy && window.location.pathname === '/') {
+    window.history.replaceState(null, '', pageHref(legacy));
+    return legacy;
+  }
+  return pageFromPath(window.location.pathname) ?? 'home';
+};
 
-  // Apply on-page SEO metadata whenever the active page changes
+export default function App() {
+  const [activePage, setActivePage] = useState<string>(currentPage);
+
+  // Keep title, meta tags, canonical link and page schema in step with the page shown
   useEffect(() => {
     applyPageSEO(activePage);
   }, [activePage]);
 
+  // Browser back/forward buttons
   useEffect(() => {
-    const onHashChange = () => {
-      const hash = window.location.hash.replace('#', '');
-      if (
-        hash &&
-        (hash === 'home' || hash === 'about' || hash === 'contact' || ALL_SERVICES_DATA[hash])
-      ) {
-        setActivePage(hash);
-      }
-    };
-    window.addEventListener('hashchange', onHashChange);
-    return () => window.removeEventListener('hashchange', onHashChange);
+    const onPopState = () => setActivePage(pageFromPath(window.location.pathname) ?? 'home');
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
   }, []);
 
   const handleNavigate = (pageId: string) => {
+    if (pageHref(pageId) !== window.location.pathname) {
+      window.history.pushState(null, '', pageHref(pageId));
+    }
     setActivePage(pageId);
-    window.location.hash = pageId;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 

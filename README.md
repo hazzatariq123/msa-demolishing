@@ -23,7 +23,7 @@ sitemap, robots.txt and form API routes).
 Copy `.env.example` to `.env` and set:
 
 - `PORT`: port to listen on (default `3000`)
-- `APP_URL`: public site URL, used for canonical links and the sitemap
+- `SITE_URL`: public site URL used for canonical links, sitemap and structured data at build time (default `https://www.msademolition.com`)
 
 ## Project layout
 
@@ -33,4 +33,8 @@ Copy `.env.example` to `.env` and set:
 - `src/data/heroShells.ts`: hero copy shared by the React pages and the static first-paint shell
 - `src/utils/whatsapp.ts`: sends form details to WhatsApp
 - `public/images/`: WebP images in three widths (`-640`, `-828`, full 1280)
-- `vite.config.ts`: build config, including the plugin that injects the static hero and defers the app bundle
+- `vite.config.ts`: build config, including the plugin that defers the app bundle until the static hero has painted
+- `scripts/prerender.ts`: runs after `vite build` and writes one complete HTML file per page (`/`, `/about`, `/contact` and the service pages) plus `404.html`, `sitemap.xml` and `robots.txt`
+- `scripts/seo-audit.py`: checks the built site (titles, descriptions, H1, canonical URLs, links, alt text, JSON-LD)
+- `scripts/optimize-images.py`: regenerates the WebP image set from the original JPEGs
+- `src/data/routes.ts`: page id to URL path map (pages use real URLs such as `/about`, not `#` addresses)

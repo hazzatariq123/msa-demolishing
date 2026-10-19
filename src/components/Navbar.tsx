@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { m as motion, AnimatePresence } from 'motion/react';
 import { X, CheckCircle2, Menu } from 'lucide-react';
+import { PageLink } from './PageLink';
 import { sendToWhatsApp } from '../utils/whatsapp';
 
 interface NavbarProps {
@@ -48,9 +49,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigatePage }) =>
       <header className="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-b border-neutral-200/80 transition-all select-none">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 h-16 sm:h-20 flex items-center justify-between">
           {/* Left: Minimal Wordmark */}
-          <button
-            type="button"
-            onClick={() => handleNavClick('home')}
+          <PageLink
+            to="home"
+            onNavigate={handleNavClick}
             aria-label="MSA Wrecking &amp; Demolition Works LLC - Return to Homepage"
             className="flex items-center cursor-pointer hover:opacity-85 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded"
           >
@@ -61,7 +62,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigatePage }) =>
               height={114}
               className="h-11 sm:h-14 w-auto"
             />
-          </button>
+          </PageLink>
 
           {/* Center/Right Desktop Navigation */}
           <nav
@@ -71,10 +72,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigatePage }) =>
             {navItems.map((item) => {
               const isActive = activePage === item.id;
               return (
-                <button
+                <PageLink
                   key={item.id}
-                  type="button"
-                  onClick={() => handleNavClick(item.id)}
+                  to={item.id}
+                  onNavigate={handleNavClick}
                   aria-current={isActive ? 'page' : undefined}
                   className={`relative px-3.5 py-2 text-xs xl:text-sm font-medium transition-all rounded-lg cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
                     isActive
@@ -89,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigatePage }) =>
                       className="absolute bottom-0 left-3 right-3 h-[2px] bg-amber-500 rounded-full"
                     />
                   )}
-                </button>
+                </PageLink>
               );
             })}
           </nav>
@@ -138,10 +139,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigatePage }) =>
                 {navItems.map((item) => {
                   const isActive = activePage === item.id;
                   return (
-                    <button
+                    <PageLink
                       key={item.id}
-                      type="button"
-                      onClick={() => handleNavClick(item.id)}
+                      to={item.id}
+                      onNavigate={handleNavClick}
                       aria-current={isActive ? 'page' : undefined}
                       className={`text-left px-3.5 py-2.5 rounded-lg text-sm font-medium transition-colors cursor-pointer flex items-center justify-between ${
                         isActive
@@ -155,7 +156,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigatePage }) =>
                           Primary
                         </span>
                       )}
-                    </button>
+                    </PageLink>
                   );
                 })}
               </div>

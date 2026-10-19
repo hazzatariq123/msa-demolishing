@@ -1,5 +1,6 @@
 import React, { useState, lazy, Suspense } from 'react';
 import { m as motion, AnimatePresence } from 'motion/react';
+import { PageLink } from './PageLink';
 import { ABOUT_HERO } from '../data/heroShells';
 import { sendToWhatsApp } from '../utils/whatsapp';
 import { SectionFallback } from './SectionFallback';
@@ -543,13 +544,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigatePage }) => {
                 Request Technical Survey
               </button>
 
-              <button
-                type="button"
-                onClick={() => onNavigatePage('building-demolition')}
+              <PageLink
+                to="building-demolition"
+                onNavigate={onNavigatePage}
                 className="border border-neutral-700 hover:border-neutral-500 text-white hover:text-white px-6 py-3.5 rounded-full text-sm font-medium transition-colors text-center cursor-pointer"
               >
                 Explore Services
-              </button>
+              </PageLink>
             </div>
           </div>
         </div>

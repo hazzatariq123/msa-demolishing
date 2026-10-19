@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { SectionFallback } from './SectionFallback';
 import { srcSetFor, CARD_SIZES } from '../utils/img';
+import { PageLink } from './PageLink';
 import { HOME_HERO } from '../data/heroShells';
 import { sendToWhatsApp } from '../utils/whatsapp';
 
@@ -342,9 +343,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigatePage }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: index * 0.08 }}
-                onClick={() => onNavigatePage(sector.id)}
-                className="group cursor-pointer flex flex-col bg-white rounded-3xl overflow-hidden border border-neutral-200/80 hover:border-neutral-300 hover:shadow-2xl transition-all duration-300 focus-within:ring-2 focus-within:ring-amber-500"
+                className="group relative flex flex-col bg-white rounded-3xl overflow-hidden border border-neutral-200/80 hover:border-neutral-300 hover:shadow-2xl transition-all duration-300 focus-within:ring-2 focus-within:ring-amber-500"
               >
+                <PageLink
+                  to={sector.id}
+                  onNavigate={onNavigatePage}
+                  aria-label={`${sector.title}: ${sector.actionText}`}
+                  className="absolute inset-0 z-20 rounded-3xl focus-visible:outline-none"
+                />
                 {/* Visual Image */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-100">
                   <img

@@ -1,5 +1,6 @@
 import express, { Request, Response, NextFunction } from 'express';
 import compression from 'compression';
+import { PAGE_PATHS } from './src/data/routes';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -9,11 +10,6 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 const IS_PROD = process.env.NODE_ENV === 'production';
-
-// Base application domain for SEO and Canonical referencing
-const APP_URL =
-  process.env.APP_URL ||
-  'https://ais-dev-4ria3ffxyzwmxx7dcoyb5j-803648951003.asia-southeast1.run.app';
 
 app.disable('x-powered-by');
 // gzip text responses (HTML, JS, CSS, JSON, SVG)
@@ -39,64 +35,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // ---------------------------------------------------------------------------
-// 2. Standard W3C / Sitemaps.org XML Sitemap (/sitemap.xml)
-// ---------------------------------------------------------------------------
-app.get('/sitemap.xml', (_req: Request, res: Response) => {
-  const currentDate = new Date().toISOString().split('T')[0];
-  const baseUrl = APP_URL.replace(/\/$/, '');
-
-  const pages = [
-    { loc: `${baseUrl}/`, priority: '1.0', changefreq: 'weekly' },
-    { loc: `${baseUrl}/#about`, priority: '0.9', changefreq: 'monthly' },
-    { loc: `${baseUrl}/#contact`, priority: '0.8', changefreq: 'monthly' },
-    { loc: `${baseUrl}/#building-demolition`, priority: '0.9', changefreq: 'weekly' },
-    { loc: `${baseUrl}/#industrial-demolition`, priority: '0.9', changefreq: 'weekly' },
-    { loc: `${baseUrl}/#interior-stripout`, priority: '0.8', changefreq: 'monthly' },
-    { loc: `${baseUrl}/#infrastructure-demolition`, priority: '0.8', changefreq: 'monthly' }
-  ];
-
-  const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-${pages
-  .map(
-    (p) => `  <url>
-    <loc>${p.loc}</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>${p.changefreq}</changefreq>
-    <priority>${p.priority}</priority>
-  </url>`
-  )
-  .join('\n')}
-</urlset>`;
-
-  res.setHeader('Content-Type', 'application/xml; charset=utf-8');
-  res.setHeader('Cache-Control', 'public, max-age=86400, s-maxage=86400');
-  res.status(200).send(xmlContent);
-});
-
-// ---------------------------------------------------------------------------
-// 3. Standard RFC-Compliant Robots.txt (/robots.txt)
-// ---------------------------------------------------------------------------
-app.get('/robots.txt', (_req: Request, res: Response) => {
-  const baseUrl = APP_URL.replace(/\/$/, '');
-  const robotsTxt = `# W3C and Search Engine Robot Directives
-# MSA Demolishing (MSA Demolishing)
-User-agent: *
-Allow: /
-Disallow: /api/
-
-Sitemap: ${baseUrl}/sitemap.xml
-`;
-
-  res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-  res.setHeader('Cache-Control', 'public, max-age=86400');
-  res.status(200).send(robotsTxt);
-});
-
-// ---------------------------------------------------------------------------
-// 4. Standard RESTful API Endpoints (RFC 8259 JSON & RFC 7807 Error Handling)
+// 2. Health check (the site's forms submit to WhatsApp, so there are no other API routes)
 // ---------------------------------------------------------------------------
 
 // Health check endpoint
@@ -111,79 +50,8 @@ app.get('/api/health', (_req: Request, res: Response) => {
   });
 });
 
-// Dynamic SEO metadata directory
-app.get('/api/seo', (_req: Request, res: Response) => {
-  res.setHeader('Content-Type', 'application/json; charset=utf-8');
-  res.status(200).json({
-    status: 'success',
-    site: 'MSA Demolishing',
-    license: 'Dubai Municipality Class A',
-    sitemapUrl: `${APP_URL}/sitemap.xml`,
-    supportedPages: [
-      'home',
-      'about',
-      'building-demolition',
-      'industrial-demolition',
-      'interior-stripout',
-      'infrastructure-demolition'
-    ]
-  });
-});
-
-// Standard Survey Request Handler with Schema Validation
-app.post('/api/survey', (req: Request, res: Response) => {
-  res.setHeader('Content-Type', 'application/json; charset=utf-8');
-  const { phone, location, name, serviceType } = req.body || {};
-
-  if (!phone || typeof phone !== 'string' || phone.trim().length < 5) {
-    return res.status(400).json({
-      type: 'https://tools.ietf.org/html/rfc7807',
-      title: 'Bad Request',
-      status: 400,
-      detail: 'A valid contact phone or WhatsApp number is required (min 5 digits).'
-    });
-  }
-
-  // Log or queue the validated survey dispatch
-  const surveyRecord = {
-    id: `SRV-${Date.now()}`,
-    phone: phone.trim(),
-    location: location ? String(location).trim() : 'Dubai / UAE General',
-    name: name ? String(name).trim() : 'Project Owner',
-    serviceType: serviceType || 'General Demolition',
-    receivedAt: new Date().toISOString(),
-    status: 'DISPATCHED_TO_ENGINEERS'
-  };
-
-  return res.status(201).json({
-    status: 'success',
-    data: surveyRecord,
-    message: 'Site survey request logged and dispatched to lead structural engineers.'
-  });
-});
-
-// Standard Contact / Quote Handler
-app.post('/api/contact', (req: Request, res: Response) => {
-  res.setHeader('Content-Type', 'application/json; charset=utf-8');
-  const { name, phone } = req.body || {};
-
-  if (!phone || !name) {
-    return res.status(400).json({
-      type: 'https://tools.ietf.org/html/rfc7807',
-      title: 'Bad Request',
-      status: 400,
-      detail: 'Name and phone number are required.'
-    });
-  }
-
-  return res.status(201).json({
-    status: 'success',
-    message: 'Technical inquiry successfully received.'
-  });
-});
-
 // ---------------------------------------------------------------------------
-// 5. Mount Dev Vite or Static Production Handler
+// 3. Mount Dev Vite or Static Production Handler
 // ---------------------------------------------------------------------------
 async function startServer() {
   if (!IS_PROD) {
@@ -206,6 +74,7 @@ async function startServer() {
     app.use(
       express.static(distDir, {
         index: false,
+        redirect: false,
         etag: true,
         setHeaders: (res, filePath) => {
           if (filePath.includes(`${path.sep}assets${path.sep}`)) {
@@ -219,9 +88,21 @@ async function startServer() {
         }
       })
     );
-    app.get('*', (_req: Request, res: Response) => {
-      res.setHeader('Cache-Control', 'no-cache');
-      res.sendFile(path.resolve(distDir, 'index.html'));
+    // Every page has its own pre-rendered file (see scripts/prerender.ts)
+    for (const pagePath of Object.values(PAGE_PATHS)) {
+      app.get(pagePath, (_req: Request, res: Response) => {
+        res.setHeader('Cache-Control', 'no-cache');
+        res.sendFile(
+          path.resolve(distDir, pagePath === '/' ? 'index.html' : `${pagePath.slice(1)}/index.html`)
+        );
+      });
+    }
+
+    // Anything else is a real 404
+    app.use((req: Request, res: Response, next: NextFunction) => {
+      if (req.path.startsWith('/api/')) return next();
+      res.status(404).setHeader('Cache-Control', 'no-cache');
+      res.sendFile(path.resolve(distDir, '404.html'));
     });
   }
 
@@ -241,8 +122,6 @@ async function startServer() {
 
   app.listen(PORT, '0.0.0.0', () => {
     console.log(`🚀 Demolition Web Server running on http://0.0.0.0:${PORT}`);
-    console.log(`📋 Sitemaps available at http://0.0.0.0:${PORT}/sitemap.xml`);
-    console.log(`🤖 Robots directives at http://0.0.0.0:${PORT}/robots.txt`);
   });
 }
 

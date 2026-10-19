@@ -1,4 +1,5 @@
 import React from 'react';
+import { PageLink } from './PageLink';
 
 interface FooterProps {
   onNavigatePage?: (pageId: string) => void;
@@ -30,9 +31,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigatePage }) => {
           <div className="md:col-span-5 flex flex-col justify-between">
             <div>
               <div className="mb-4">
-                <button
-                  type="button"
-                  onClick={() => handlePageClick('home')}
+                <PageLink
+                  to="home"
+                  onNavigate={handlePageClick}
                   aria-label="MSA Wrecking &amp; Demolition Works LLC - Return to Homepage"
                   className="block hover:opacity-85 transition-opacity cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded"
                 >
@@ -45,7 +46,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigatePage }) => {
                     height={114}
                     className="h-16 sm:h-20 w-auto"
                   />
-                </button>
+                </PageLink>
               </div>
               <p className="text-sm text-neutral-600 max-w-md leading-relaxed font-normal mb-5">
                 Class A licensed structural deconstruction and engineered demolition contractor
@@ -75,22 +76,22 @@ export const Footer: React.FC<FooterProps> = ({ onNavigatePage }) => {
             </h3>
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
-                <button
-                  type="button"
-                  onClick={() => handlePageClick('home')}
+                <PageLink
+                  to="home"
+                  onNavigate={handlePageClick}
                   className="hover:text-neutral-950 transition-colors text-neutral-600 text-left cursor-pointer"
                 >
                   Home
-                </button>
+                </PageLink>
               </li>
               <li>
-                <button
-                  type="button"
-                  onClick={() => handlePageClick('about')}
+                <PageLink
+                  to="about"
+                  onNavigate={handlePageClick}
                   className="hover:text-neutral-950 transition-colors text-neutral-600 text-left cursor-pointer"
                 >
                   About Us
-                </button>
+                </PageLink>
               </li>
               <li>
                 <button
@@ -129,13 +130,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigatePage }) => {
                 </button>
               </li>
               <li>
-                <button
-                  type="button"
-                  onClick={() => handlePageClick('contact')}
+                <PageLink
+                  to="contact"
+                  onNavigate={handlePageClick}
                   className="hover:text-neutral-950 transition-colors text-neutral-600 text-left cursor-pointer"
                 >
                   Contact Us
-                </button>
+                </PageLink>
               </li>
             </ul>
           </nav>
@@ -147,40 +148,40 @@ export const Footer: React.FC<FooterProps> = ({ onNavigatePage }) => {
             </h3>
             <ul className="space-y-2.5 text-xs sm:text-sm text-neutral-600">
               <li>
-                <button
-                  type="button"
-                  onClick={() => handlePageClick('building-demolition')}
+                <PageLink
+                  to="building-demolition"
+                  onNavigate={handlePageClick}
                   className="hover:text-neutral-950 transition-colors text-left font-medium text-amber-800 cursor-pointer"
                 >
                   Building Demolition
-                </button>
+                </PageLink>
               </li>
               <li>
-                <button
-                  type="button"
-                  onClick={() => handlePageClick('industrial-demolition')}
+                <PageLink
+                  to="industrial-demolition"
+                  onNavigate={handlePageClick}
                   className="hover:text-neutral-950 transition-colors text-left cursor-pointer"
                 >
                   Industrial Demolition
-                </button>
+                </PageLink>
               </li>
               <li>
-                <button
-                  type="button"
-                  onClick={() => handlePageClick('interior-stripout')}
+                <PageLink
+                  to="interior-stripout"
+                  onNavigate={handlePageClick}
                   className="hover:text-neutral-950 transition-colors text-left cursor-pointer"
                 >
                   Interior Strip-Out
-                </button>
+                </PageLink>
               </li>
               <li>
-                <button
-                  type="button"
-                  onClick={() => handlePageClick('infrastructure-demolition')}
+                <PageLink
+                  to="infrastructure-demolition"
+                  onNavigate={handlePageClick}
                   className="hover:text-neutral-950 transition-colors text-left cursor-pointer"
                 >
                   Infrastructure Demolition
-                </button>
+                </PageLink>
               </li>
             </ul>
           </nav>
@@ -193,13 +194,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigatePage }) => {
             <p className="text-sm text-neutral-600 leading-relaxed mb-4">
               Need a site survey or a demolition quote? Speak to our engineers.
             </p>
-            <button
-              type="button"
-              onClick={() => handlePageClick('contact')}
+            <PageLink
+              to="contact"
+              onNavigate={handlePageClick}
               className="inline-flex items-center justify-center rounded-lg bg-amber-500 hover:bg-amber-400 text-white px-5 py-2.5 text-sm font-semibold transition-colors cursor-pointer"
             >
               Contact Us
-            </button>
+            </PageLink>
           </div>
         </div>
 
