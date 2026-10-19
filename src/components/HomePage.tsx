@@ -18,6 +18,7 @@ import { srcSetFor, CARD_SIZES } from '../utils/img';
 import { PageLink } from './PageLink';
 import { HOME_HERO } from '../data/heroShells';
 import { sendToWhatsApp } from '../utils/whatsapp';
+import { FaqSection } from './FaqSection';
 
 const StandardDemolitionProcess = lazy(() =>
   import('./StandardDemolitionProcess').then((m) => ({ default: m.StandardDemolitionProcess }))
@@ -61,7 +62,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigatePage }) => {
       id: 'building-demolition',
       title: 'Building Demolition',
       subtitle: 'High-reach mechanical felling & multi-story tower teardown',
-      image: '/images/hero_building_demolition_1791830585768.webp',
+      image: '/images/high-reach-building-demolition-dubai.webp',
       imageAlt: 'High-reach excavator demolishing commercial concrete structure in Dubai',
       icon: Building2,
       metric: 'Class A Unlimited Height',
@@ -71,7 +72,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigatePage }) => {
       id: 'industrial-demolition',
       title: 'Industrial Demolition',
       subtitle: 'Petrochemical refineries, processing plants, silos & heavy steel dismantling',
-      image: '/images/demolition_heavy_shear_1791756033650.webp',
+      image: '/images/industrial-demolition-heavy-shear.webp',
       imageAlt: 'Heavy hydraulic excavator shears dismantling industrial plant steel frame',
       icon: Factory,
       metric: 'Zero-Spark Cold Cutting',
@@ -81,7 +82,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigatePage }) => {
       id: 'interior-stripout',
       title: 'Interior Strip-Out',
       subtitle: 'Architectural soft-strip, retail mall night shifts & bare-shell handover',
-      image: '/images/interior_stripout_demolition_1791759731027.webp',
+      image: '/images/interior-strip-out-dubai.webp',
       imageAlt: 'Architectural interior strip-out and MEP deconstruction in commercial space',
       icon: Layers,
       metric: 'Zero Dust Migration HEPA',
@@ -91,7 +92,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigatePage }) => {
       id: 'infrastructure-demolition',
       title: 'Infrastructure Demolition',
       subtitle: 'Civil highway viaducts, coastal bridges, marine wharves & deep shoring',
-      image: '/images/dubai_flyover_viaduct_demolition_1791762226685.webp',
+      image: '/images/flyover-viaduct-demolition-dubai.webp',
       imageAlt: 'Civil infrastructure demolition and highway bridge segment removal in UAE',
       icon: Construction,
       metric: 'Sub-Millimeter Vibration',
@@ -109,8 +110,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigatePage }) => {
         {/* Full-bleed crisp background image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/hero_building_demolition_1791830585768.webp"
-            srcSet="/images/hero_building_demolition_1791830585768-640.webp 640w, /images/hero_building_demolition_1791830585768-750.webp 750w, /images/hero_building_demolition_1791830585768-828.webp 828w, /images/hero_building_demolition_1791830585768.webp 1280w"
+            src="/images/high-reach-building-demolition-dubai.webp"
+            srcSet="/images/high-reach-building-demolition-dubai-640.webp 640w, /images/high-reach-building-demolition-dubai-750.webp 750w, /images/high-reach-building-demolition-dubai-828.webp 828w, /images/high-reach-building-demolition-dubai.webp 1280w"
             sizes="100vw"
             width={1280}
             height={714}
@@ -348,9 +349,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigatePage }) => {
                 <PageLink
                   to={sector.id}
                   onNavigate={onNavigatePage}
-                  aria-label={`${sector.title}: ${sector.actionText}`}
                   className="absolute inset-0 z-20 rounded-3xl focus-visible:outline-none"
-                />
+                >
+                  <span className="sr-only">{sector.actionText}</span>
+                </PageLink>
                 {/* Visual Image */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-100">
                   <img
@@ -422,6 +424,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigatePage }) => {
         {/* 6. Simple Text Section */}
         <SimpleTextSection />
       </Suspense>
+
+      {/* Questions customers ask (also marked up as FAQPage) */}
+      <FaqSection pageId="home" />
     </div>
   );
 };

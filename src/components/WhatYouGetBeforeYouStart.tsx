@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { m as motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
-import inspectionImg from '../assets/images/inspection_icon_png_1791823642120-640.webp';
-import permitImg from '../assets/images/permit_doc_png_1791823653448-640.webp';
-import fleetImg from '../assets/images/emirates_fleet_png_1791823665730-640.webp';
+import { srcSetFor, CARD_SIZES } from '../utils/img';
+
+const inspectionImg = '/images/free-demolition-site-inspection.webp';
+const permitImg = '/images/demolition-permit-management.webp';
+const fleetImg = '/images/demolition-fleet-all-emirates.webp';
 
 interface WhatYouGetBeforeYouStartProps {
   onOpenSurvey?: () => void;
@@ -83,6 +85,8 @@ export const WhatYouGetBeforeYouStart: React.FC<WhatYouGetBeforeYouStartProps> =
                   width={1280}
                   height={800}
                   src={inspectionImg}
+                  srcSet={srcSetFor(inspectionImg)}
+                  sizes={CARD_SIZES}
                   alt="Engineers inspecting blueprint with laser survey"
                   className="max-h-44 sm:max-h-48 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 />
@@ -149,6 +153,8 @@ export const WhatYouGetBeforeYouStart: React.FC<WhatYouGetBeforeYouStartProps> =
                   width={1280}
                   height={800}
                   src={permitImg}
+                  srcSet={srcSetFor(permitImg)}
+                  sizes={CARD_SIZES}
                   alt="Dubai Municipality approved demolition permit document"
                   className="max-h-44 sm:max-h-48 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 />
@@ -213,6 +219,8 @@ export const WhatYouGetBeforeYouStart: React.FC<WhatYouGetBeforeYouStartProps> =
                   width={1280}
                   height={800}
                   src={fleetImg}
+                  srcSet={srcSetFor(fleetImg)}
+                  sizes={CARD_SIZES}
                   alt="UAE heavy demolition machinery and nationwide logistics fleet"
                   className="max-h-44 sm:max-h-48 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 />

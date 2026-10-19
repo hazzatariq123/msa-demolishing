@@ -70,7 +70,7 @@ export default function App() {
     }
 
     const serviceData = ALL_SERVICES_DATA[activePage] || ALL_SERVICES_DATA['building-demolition'];
-    return <ServiceLandingPage data={serviceData} />;
+    return <ServiceLandingPage data={serviceData} onNavigatePage={handleNavigate} />;
   };
 
   return (

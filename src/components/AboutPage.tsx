@@ -99,8 +99,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigatePage }) => {
         {/* Full-bleed authentic engineering image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/about_us_engineers_1791866089032.webp"
-            srcSet="/images/about_us_engineers_1791866089032-640.webp 640w, /images/about_us_engineers_1791866089032-750.webp 750w, /images/about_us_engineers_1791866089032-828.webp 828w, /images/about_us_engineers_1791866089032.webp 1280w"
+            src="/images/msa-demolition-engineers-dubai.webp"
+            srcSet="/images/msa-demolition-engineers-dubai-640.webp 640w, /images/msa-demolition-engineers-dubai-750.webp 750w, /images/msa-demolition-engineers-dubai-828.webp 828w, /images/msa-demolition-engineers-dubai.webp 1280w"
             sizes="100vw"
             width={1280}
             height={714}

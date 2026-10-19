@@ -40,7 +40,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigatePage }) => {
                   <img
                     loading="lazy"
                     decoding="async"
-                    src="/images/MSA-logo-300.webp"
+                    src="/images/msa-demolition-logo-300.webp"
                     alt="MSA Wrecking &amp; Demolition Works LLC"
                     width={300}
                     height={114}
@@ -71,9 +71,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigatePage }) => {
 
           {/* Quick Navigation (Columns 6-7) */}
           <nav aria-label="Footer Quick Navigation" className="md:col-span-2">
-            <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-950 mb-4">
+            <p className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-950 mb-4">
               Navigation
-            </h3>
+            </p>
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
                 <PageLink
@@ -143,9 +143,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigatePage }) => {
 
           {/* Core Services Pages (Columns 8-9) */}
           <nav aria-label="Footer Services Navigation" className="md:col-span-2">
-            <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-950 mb-4">
+            <p className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-950 mb-4">
               Individual Services
-            </h3>
+            </p>
             <ul className="space-y-2.5 text-xs sm:text-sm text-neutral-600">
               <li>
                 <PageLink
@@ -188,9 +188,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigatePage }) => {
 
           {/* Contact lives on its own page */}
           <div className="md:col-span-3">
-            <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-950 mb-4">
+            <p className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-950 mb-4">
               Get in Touch
-            </h3>
+            </p>
             <p className="text-sm text-neutral-600 leading-relaxed mb-4">
               Need a site survey or a demolition quote? Speak to our engineers.
             </p>

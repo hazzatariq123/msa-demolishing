@@ -51,7 +51,7 @@ export const HOME_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '98.2% Diverted',
         duration: '45 Days'
       },
-      image: '/images/building_demolition_dubai_1791759699360.webp'
+      image: '/images/building-demolition-dubai.webp'
     },
     {
       id: 'hp2',
@@ -71,7 +71,7 @@ export const HOME_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '98.5% Diverted',
         duration: '38 Days'
       },
-      image: '/images/dubai_palm_resort_demolition_1791762297191.webp'
+      image: '/images/resort-demolition-palm-jumeirah.webp'
     },
     {
       id: 'hp3',
@@ -91,7 +91,7 @@ export const HOME_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '100% Recycled',
         duration: '14 Nights'
       },
-      image: '/images/dubai_flyover_viaduct_demolition_1791762226685.webp'
+      image: '/images/flyover-viaduct-demolition-dubai.webp'
     },
     {
       id: 'hp4',
@@ -111,7 +111,7 @@ export const HOME_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '96.8% Aggregate Reused',
         duration: '60 Days'
       },
-      image: '/images/dubai_marine_wharf_demolition_1791762216315.webp'
+      image: '/images/marine-wharf-demolition-dubai.webp'
     },
     {
       id: 'hp5',
@@ -131,7 +131,7 @@ export const HOME_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '99.1% Crushed',
         duration: '21 Days'
       },
-      image: '/images/dubai_silo_plant_demolition_1791762286680.webp'
+      image: '/images/silo-plant-demolition-uae.webp'
     },
     {
       id: 'hp6',
@@ -151,7 +151,7 @@ export const HOME_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '97.4% Recycled',
         duration: '28 Days'
       },
-      image: '/images/structural_wire_sawing_1791759713427.webp'
+      image: '/images/diamond-wire-sawing-concrete.webp'
     },
     {
       id: 'hp7',
@@ -171,7 +171,7 @@ export const HOME_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '94.2% Diverted',
         duration: '35 Days'
       },
-      image: '/images/interior_stripout_demolition_1791759731027.webp'
+      image: '/images/interior-strip-out-dubai.webp'
     },
     {
       id: 'hp8',
@@ -191,7 +191,7 @@ export const HOME_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '98.9% Aggregate Base',
         duration: '50 Days'
       },
-      image: '/images/deep_shoring_foundation_removal_1791759750345.webp'
+      image: '/images/deep-shoring-foundation-removal.webp'
     }
   ]
 };
@@ -222,7 +222,7 @@ export const BUILDING_DEMOLITION_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '98.2% Diverted',
         duration: '45 Days'
       },
-      image: '/images/building_demolition_dubai_1791759699360.webp'
+      image: '/images/building-demolition-dubai.webp'
     },
     {
       id: 'bd2',
@@ -242,7 +242,7 @@ export const BUILDING_DEMOLITION_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '98.5% Diverted',
         duration: '38 Days'
       },
-      image: '/images/dubai_palm_resort_demolition_1791762297191.webp'
+      image: '/images/resort-demolition-palm-jumeirah.webp'
     },
     {
       id: 'bd3',
@@ -262,7 +262,7 @@ export const BUILDING_DEMOLITION_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '97.6% Diverted',
         duration: '30 Days'
       },
-      image: '/images/real_dubai_plaza_hero_1791768452077.webp'
+      image: '/images/plaza-demolition-dubai.webp'
     },
     {
       id: 'bd4',
@@ -282,7 +282,7 @@ export const BUILDING_DEMOLITION_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '98.8% Diverted',
         duration: '34 Days'
       },
-      image: '/images/hero_building_demolition_1791830585768.webp'
+      image: '/images/high-reach-building-demolition-dubai.webp'
     },
     {
       id: 'bd5',
@@ -302,7 +302,7 @@ export const BUILDING_DEMOLITION_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '99.0% Recycled',
         duration: '28 Days'
       },
-      image: '/images/real_plaza_demolish_mid_1791768516531.webp'
+      image: '/images/plaza-demolition-in-progress.webp'
     },
     {
       id: 'bd6',
@@ -322,7 +322,7 @@ export const BUILDING_DEMOLITION_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '99.4% Crushed & Reused',
         duration: '26 Days'
       },
-      image: '/images/plaza_4k_hd_white_1791768728482.webp'
+      image: '/images/commercial-plaza-demolition.webp'
     },
     {
       id: 'bd7',
@@ -342,7 +342,7 @@ export const BUILDING_DEMOLITION_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '96.5% Diverted',
         duration: '16 Days'
       },
-      image: '/images/uae_demolition_site_1791830061517.webp'
+      image: '/images/demolition-site-uae.webp'
     },
     {
       id: 'bd8',
@@ -362,7 +362,7 @@ export const BUILDING_DEMOLITION_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '98.0% Recycled',
         duration: '22 Days'
       },
-      image: '/images/dubai_demolition_cleared_1791767868682.webp'
+      image: '/images/cleared-demolition-site-dubai.webp'
     }
   ]
 };
@@ -393,7 +393,7 @@ export const INDUSTRIAL_DEMOLITION_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '99.1% Crushed',
         duration: '21 Days'
       },
-      image: '/images/dubai_silo_plant_demolition_1791762286680.webp'
+      image: '/images/silo-plant-demolition-uae.webp'
     },
     {
       id: 'id2',
@@ -413,7 +413,7 @@ export const INDUSTRIAL_DEMOLITION_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '99.5% High-Grade Steel',
         duration: '32 Days'
       },
-      image: '/images/demolition_heavy_shear_1791756033650.webp'
+      image: '/images/industrial-demolition-heavy-shear.webp'
     },
     {
       id: 'id3',
@@ -433,7 +433,7 @@ export const INDUSTRIAL_DEMOLITION_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '100% Recycled Steel',
         duration: '40 Days'
       },
-      image: '/images/controlled_implosion_sequence_1791756049767.webp'
+      image: '/images/controlled-implosion-demolition.webp'
     },
     {
       id: 'id4',
@@ -453,7 +453,7 @@ export const INDUSTRIAL_DEMOLITION_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '98.7% Salvaged',
         duration: '24 Days'
       },
-      image: '/images/uae_demolition_site_1791830061517.webp'
+      image: '/images/demolition-site-uae.webp'
     },
     {
       id: 'id5',
@@ -473,7 +473,7 @@ export const INDUSTRIAL_DEMOLITION_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '97.2% Copper & Steel',
         duration: '18 Days'
       },
-      image: '/images/dubai_demolition_cleared_1791767868682.webp'
+      image: '/images/cleared-demolition-site-dubai.webp'
     },
     {
       id: 'id6',
@@ -493,7 +493,7 @@ export const INDUSTRIAL_DEMOLITION_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '99.2% Recycled Materials',
         duration: '48 Days'
       },
-      image: '/images/structural_wire_sawing_1791759713427.webp'
+      image: '/images/diamond-wire-sawing-concrete.webp'
     },
     {
       id: 'id7',
@@ -513,7 +513,7 @@ export const INDUSTRIAL_DEMOLITION_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '100% Salvage Yield',
         duration: '19 Days'
       },
-      image: '/images/building_demolition_dubai_1791759699360.webp'
+      image: '/images/building-demolition-dubai.webp'
     },
     {
       id: 'id8',
@@ -533,7 +533,7 @@ export const INDUSTRIAL_DEMOLITION_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '98.6% Diverted',
         duration: '30 Days'
       },
-      image: '/images/robotic_concrete_cruncher_1791756065306.webp'
+      image: '/images/robotic-concrete-demolition.webp'
     }
   ]
 };
@@ -564,7 +564,7 @@ export const INTERIOR_STRIPOUT_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '94.2% Diverted',
         duration: '35 Days'
       },
-      image: '/images/interior_stripout_demolition_1791759731027.webp'
+      image: '/images/interior-strip-out-dubai.webp'
     },
     {
       id: 'is2',
@@ -584,7 +584,7 @@ export const INTERIOR_STRIPOUT_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '91.5% Diverted',
         duration: '10 Nights'
       },
-      image: '/images/robotic_concrete_cruncher_1791756065306.webp'
+      image: '/images/robotic-concrete-demolition.webp'
     },
     {
       id: 'is3',
@@ -604,7 +604,7 @@ export const INTERIOR_STRIPOUT_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '93.0% Diverted',
         duration: '28 Days'
       },
-      image: '/images/dubai_palm_resort_demolition_1791762297191.webp'
+      image: '/images/resort-demolition-palm-jumeirah.webp'
     },
     {
       id: 'is4',
@@ -624,7 +624,7 @@ export const INTERIOR_STRIPOUT_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '95.8% Diverted',
         duration: '21 Days'
       },
-      image: '/images/deep_shoring_foundation_removal_1791759750345.webp'
+      image: '/images/deep-shoring-foundation-removal.webp'
     },
     {
       id: 'is5',
@@ -644,7 +644,7 @@ export const INTERIOR_STRIPOUT_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '92.4% Diverted',
         duration: '14 Days'
       },
-      image: '/images/dubai_engineers_inspection_1791761613623.webp'
+      image: '/images/engineers-site-inspection-dubai.webp'
     },
     {
       id: 'is6',
@@ -664,7 +664,7 @@ export const INTERIOR_STRIPOUT_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '89.6% Diverted',
         duration: '12 Days'
       },
-      image: '/images/faint_demolition_sketch_1791756966285.webp'
+      image: '/images/demolition-engineering-sketch.webp'
     },
     {
       id: 'is7',
@@ -684,7 +684,7 @@ export const INTERIOR_STRIPOUT_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '90.2% Diverted',
         duration: '15 Days'
       },
-      image: '/images/dubai_plaza_intact_1791767847027.webp'
+      image: '/images/commercial-plaza-before-demolition.webp'
     },
     {
       id: 'is8',
@@ -704,7 +704,7 @@ export const INTERIOR_STRIPOUT_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '96.0% Diverted',
         duration: '16 Days'
       },
-      image: '/images/structural_wire_sawing_1791759713427.webp'
+      image: '/images/diamond-wire-sawing-concrete.webp'
     }
   ]
 };
@@ -735,7 +735,7 @@ export const INFRASTRUCTURE_DEMOLITION_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '100% Recycled',
         duration: '14 Nights'
       },
-      image: '/images/dubai_flyover_viaduct_demolition_1791762226685.webp'
+      image: '/images/flyover-viaduct-demolition-dubai.webp'
     },
     {
       id: 'in2',
@@ -755,7 +755,7 @@ export const INFRASTRUCTURE_DEMOLITION_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '96.8% Aggregate Reused',
         duration: '60 Days'
       },
-      image: '/images/dubai_marine_wharf_demolition_1791762216315.webp'
+      image: '/images/marine-wharf-demolition-dubai.webp'
     },
     {
       id: 'in3',
@@ -775,7 +775,7 @@ export const INFRASTRUCTURE_DEMOLITION_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '97.4% Recycled',
         duration: '28 Days'
       },
-      image: '/images/structural_wire_sawing_1791759713427.webp'
+      image: '/images/diamond-wire-sawing-concrete.webp'
     },
     {
       id: 'in4',
@@ -795,7 +795,7 @@ export const INFRASTRUCTURE_DEMOLITION_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '98.9% Aggregate Base',
         duration: '50 Days'
       },
-      image: '/images/deep_shoring_foundation_removal_1791759750345.webp'
+      image: '/images/deep-shoring-foundation-removal.webp'
     },
     {
       id: 'in5',
@@ -815,7 +815,7 @@ export const INFRASTRUCTURE_DEMOLITION_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '98.0% Recycled',
         duration: '18 Days'
       },
-      image: '/images/dubai_plaza_intact_1791767847027.webp'
+      image: '/images/commercial-plaza-before-demolition.webp'
     },
     {
       id: 'in6',
@@ -835,7 +835,7 @@ export const INFRASTRUCTURE_DEMOLITION_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '99.0% Reused',
         duration: '12 Nights'
       },
-      image: '/images/uae_demolition_site_1791830061517.webp'
+      image: '/images/demolition-site-uae.webp'
     },
     {
       id: 'in7',
@@ -855,7 +855,7 @@ export const INFRASTRUCTURE_DEMOLITION_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '100% Water Recirculated',
         duration: '15 Days'
       },
-      image: '/images/demolition_heavy_shear_1791756033650.webp'
+      image: '/images/industrial-demolition-heavy-shear.webp'
     },
     {
       id: 'in8',
@@ -875,7 +875,7 @@ export const INFRASTRUCTURE_DEMOLITION_PORTFOLIO: PortfolioCategoryData = {
         recyclingRate: '98.5% Aggregates Reused',
         duration: '16 Days'
       },
-      image: '/images/dubai_demolition_cleared_1791767868682.webp'
+      image: '/images/cleared-demolition-site-dubai.webp'
     }
   ]
 };

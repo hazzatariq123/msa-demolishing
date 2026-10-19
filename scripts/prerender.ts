@@ -122,7 +122,7 @@ writeFileSync(
   </head>
   <body>
     <main>
-      <img src="/images/MSA-logo-300.webp" width="300" height="114" alt="MSA Wrecking &amp; Demolition Works LLC">
+      <img src="/images/msa-demolition-logo-300.webp" width="300" height="114" alt="MSA Wrecking &amp; Demolition Works LLC">
       <h1>Page not found</h1>
       <p>The page you are looking for does not exist or has moved.</p>
       <a class="btn" href="/">Back to the home page</a>

@@ -56,7 +56,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigatePage }) =>
             className="flex items-center cursor-pointer hover:opacity-85 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded"
           >
             <img
-              src="/images/MSA-logo-300.webp"
+              src="/images/msa-demolition-logo-300.webp"
               alt="MSA Wrecking &amp; Demolition Works LLC"
               width={300}
               height={114}

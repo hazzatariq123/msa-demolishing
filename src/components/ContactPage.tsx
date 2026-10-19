@@ -3,6 +3,7 @@ import { CONTACT_HERO } from '../data/heroShells';
 import { srcSetFor } from '../utils/img';
 import { ContactInfoSection } from './ContactInfoSection';
 import { HomeEnquirySection } from './HomeEnquirySection';
+import { FaqSection } from './FaqSection';
 
 /** Dedicated contact page: the only place contact details and the enquiry form live. */
 export const ContactPage: React.FC = () => (
@@ -48,5 +49,6 @@ export const ContactPage: React.FC = () => (
 
     <ContactInfoSection />
     <HomeEnquirySection />
+    <FaqSection pageId="contact" />
   </div>
 );

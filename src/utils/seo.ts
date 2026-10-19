@@ -1,4 +1,5 @@
 import { pageHref } from '../data/routes';
+import { FAQS, faqPlainText } from '../data/faqs';
 
 export interface PageSEOMetadata {
   /** 50-60 characters. */
@@ -18,7 +19,7 @@ export const PAGES_SEO: Record<string, PageSEOMetadata> = {
     title: 'MSA Demolishing | Demolition Contractor in Dubai, UAE',
     description:
       'Class A licensed demolition contractor in Dubai. High-reach building felling, industrial dismantling, interior strip-outs and infrastructure demolition.',
-    ogImage: '/images/hero_building_demolition_1791830585768.webp',
+    ogImage: '/images/high-reach-building-demolition-dubai.webp',
     schemaType: 'WebPage',
     breadcrumbs: [HOME]
   },
@@ -26,7 +27,7 @@ export const PAGES_SEO: Record<string, PageSEOMetadata> = {
     title: 'About MSA Demolishing | Class A Demolition Experts UAE',
     description:
       'Meet MSA Wrecking & Demolition Works LLC: Class A licensed engineers delivering safe, controlled demolition and high material recovery across the UAE.',
-    ogImage: '/images/about_us_engineers_1791866089032.webp',
+    ogImage: '/images/msa-demolition-engineers-dubai.webp',
     schemaType: 'AboutPage',
     breadcrumbs: [HOME, { name: 'About Us', pageId: 'about' }]
   },
@@ -34,7 +35,7 @@ export const PAGES_SEO: Record<string, PageSEOMetadata> = {
     title: 'Contact MSA Demolishing | Free Site Survey in Dubai',
     description:
       'Contact MSA Demolishing in Al Qusais, Dubai. Call or WhatsApp +971 55 434 8690 for a free site survey and a written demolition quote within 24 hours.',
-    ogImage: '/images/dubai_engineers_inspection_1791761613623.webp',
+    ogImage: '/images/engineers-site-inspection-dubai.webp',
     schemaType: 'ContactPage',
     breadcrumbs: [HOME, { name: 'Contact', pageId: 'contact' }]
   },
@@ -42,7 +43,7 @@ export const PAGES_SEO: Record<string, PageSEOMetadata> = {
     title: 'Building Demolition in Dubai & UAE | MSA Demolishing',
     description:
       'Class A licensed building demolition in Dubai: high-reach felling, precision wire sawing and controlled teardown of towers with vibration monitoring.',
-    ogImage: '/images/hero_building_demolition_1791830585768.webp',
+    ogImage: '/images/high-reach-building-demolition-dubai.webp',
     schemaType: 'Service',
     breadcrumbs: [HOME, { name: 'Building Demolition', pageId: 'building-demolition' }]
   },
@@ -50,7 +51,7 @@ export const PAGES_SEO: Record<string, PageSEOMetadata> = {
     title: 'Industrial Demolition & Plant Dismantling | MSA UAE',
     description:
       'Turnkey industrial demolition in the UAE: refineries, silos, steel plants and power stations dismantled safely under strict permit and safety control.',
-    ogImage: '/images/demolition_heavy_shear_1791756033650.webp',
+    ogImage: '/images/industrial-demolition-heavy-shear.webp',
     schemaType: 'Service',
     breadcrumbs: [HOME, { name: 'Industrial Demolition', pageId: 'industrial-demolition' }]
   },
@@ -58,7 +59,7 @@ export const PAGES_SEO: Record<string, PageSEOMetadata> = {
     title: 'Interior Strip-Out & Soft Demolition Dubai | MSA',
     description:
       'Commercial interior strip-out and soft demolition in Dubai: retail, offices and MEP clearance with dust control and night-shift working.',
-    ogImage: '/images/interior_stripout_demolition_1791759731027.webp',
+    ogImage: '/images/interior-strip-out-dubai.webp',
     schemaType: 'Service',
     breadcrumbs: [HOME, { name: 'Interior Strip-Out', pageId: 'interior-stripout' }]
   },
@@ -66,7 +67,7 @@ export const PAGES_SEO: Record<string, PageSEOMetadata> = {
     title: 'Infrastructure & Bridge Demolition UAE | MSA',
     description:
       'Bridge, flyover and infrastructure demolition in the UAE, including viaducts, marine wharves and deep shoring removal under RTA approvals.',
-    ogImage: '/images/dubai_flyover_viaduct_demolition_1791762226685.webp',
+    ogImage: '/images/flyover-viaduct-demolition-dubai.webp',
     schemaType: 'Service',
     breadcrumbs: [HOME, { name: 'Infrastructure Demolition', pageId: 'infrastructure-demolition' }]
   }
@@ -108,7 +109,20 @@ export function buildPageSchema(pageId: string, origin: string): object[] {
           isPartOf: { '@id': `${origin}/#website` }
         };
 
-  return [breadcrumbs, page];
+  const faq = FAQS[pageId];
+  if (!faq) return [breadcrumbs, page];
+
+  const faqPage = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.items.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: faqPlainText(item.answer) }
+    }))
+  };
+
+  return [breadcrumbs, page, faqPage];
 }
 
 const setMeta = (attr: 'name' | 'property', key: string, content: string) => {

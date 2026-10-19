@@ -38,12 +38,12 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
     slug: 'building-demolition',
     navTitle: 'Building Demolition',
     heroEyebrow: 'MSA DEMOLISHING · UAE',
-    heroTitle: 'Building Demolition & Controlled Deconstruction',
+    heroTitle: 'Building Demolition in Dubai & Across the UAE',
     heroDescription:
       'Class A licensed contractor executing high-reach felling, precision wire sawing, and controlled structural teardowns across Dubai. Governed by zero-vibration telemetry, rapid municipal permits, and 98% recycled material recovery.',
-    heroImage: '/images/hero_building_demolition_1791830585768.webp',
+    heroImage: '/images/high-reach-building-demolition-dubai.webp',
     sectionSubtitle: 'Core Capabilities // UAE Operations',
-    sectionTitle: 'Demolition Services',
+    sectionTitle: 'Building Demolition Services in Dubai',
     sectionDescription:
       'From complete high-reach structural felling to surgical interior strip-outs, industrial dismantling, and foundation extraction across Dubai and the UAE.',
     subServices: [
@@ -51,7 +51,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'building-demolition',
         title: 'Building Demolition',
         subtitle: 'High-reach mechanical felling & multi-story tower teardown',
-        image: '/images/building_demolition_dubai_1791759699360.webp',
+        image: '/images/building-demolition-dubai.webp',
         scopeDescription:
           'Engineered top-down felling and high-reach mechanical demolition for multi-story towers, commercial complexes, and residential developments across the UAE.'
       },
@@ -59,7 +59,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'structural-deconstruction',
         title: 'Structural Deconstruction',
         subtitle: 'Precision diamond wire sawing & selective load-bearing slicing',
-        image: '/images/structural_wire_sawing_1791759713427.webp',
+        image: '/images/diamond-wire-sawing-concrete.webp',
         scopeDescription:
           'Vibration-free diamond wire cutting and selective concrete slicing for load-bearing modifications, structural alterations, and architectural retrofits.'
       },
@@ -67,7 +67,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'interior-stripout',
         title: 'Interior Strip-Out',
         subtitle: 'Turnkey architectural soft-strip for commercial & retail fit-outs',
-        image: '/images/interior_stripout_demolition_1791759731027.webp',
+        image: '/images/interior-strip-out-dubai.webp',
         scopeDescription:
           'Complete internal soft-strip removal of non-load-bearing walls, MEP conduits, ceilings, and fixtures for retail centers, corporate offices, and hospitality projects.'
       },
@@ -75,7 +75,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'foundation-removal',
         title: 'Foundation & Shoring Removal',
         subtitle: 'Secant pile extraction, deep pile caps & coastal dewatering',
-        image: '/images/deep_shoring_foundation_removal_1791759750345.webp',
+        image: '/images/deep-shoring-foundation-removal.webp',
         scopeDescription:
           'Heavy hydraulic breaker extraction of underground concrete rafts, secant piles, contiguous walls, and deep basement foundations.'
       },
@@ -83,7 +83,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'industrial-demolition',
         title: 'Industrial & Plant Demolition',
         subtitle: 'Heavy steel structure felling, silos, refineries & plant dismantling',
-        image: '/images/dubai_silo_plant_demolition_1791762286680.webp',
+        image: '/images/silo-plant-demolition-uae.webp',
         scopeDescription:
           'Engineered dismantling of industrial manufacturing plants, processing facilities, silos, heavy structural steel frames, and refinery infrastructure.'
       },
@@ -91,7 +91,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'controlled-implosion',
         title: 'Controlled Implosion & Blasting',
         subtitle: 'Engineered collapse sequences with micro-seismic & dust suppression',
-        image: '/images/controlled_implosion_sequence_1791756049767.webp',
+        image: '/images/controlled-implosion-demolition.webp',
         scopeDescription:
           'Precision explosive felling and controlled collapse engineering for tall silos, cooling towers, and isolated complexes requiring rapid vertical clearance.'
       },
@@ -99,7 +99,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'infrastructure-demolition',
         title: 'Infrastructure & Bridge Demolition',
         subtitle: 'Civil viaducts, elevated flyovers & marine structure deconstruction',
-        image: '/images/dubai_flyover_viaduct_demolition_1791762226685.webp',
+        image: '/images/flyover-viaduct-demolition-dubai.webp',
         scopeDescription:
           'Segmental hydro-demolition, wire sawing, and heavy crane tandem lifting for highway viaducts, civil bridges, and marine quayside structures.'
       },
@@ -107,7 +107,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'robotic-demolition',
         title: 'Robotic & Confined Demolition',
         subtitle: 'Zero-emission electric Brokk remote machines for constrained spaces',
-        image: '/images/robotic_concrete_cruncher_1791756065306.webp',
+        image: '/images/robotic-concrete-demolition.webp',
         scopeDescription:
           'Compact remote-controlled electric robotics engineered for fume-free, low-vibration demolition within live hospitals, airports, and confined interior zones.'
       }
@@ -139,7 +139,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
       }
     ],
     overviewText: {
-      heading: 'Engineered for Consequence. Trusted Across the UAE.',
+      heading: 'Safe, Controlled Building Demolition for Dubai Sites',
       paragraphs: [
         'MSA Demolishing delivers precision building demolition across Dubai and the UAE. In high-density urban corridors, demolition is not a blunt exercise of force—it is an exacting branch of structural engineering where every column cut, wire saw slice, and floor uncoupling is calculated against strict municipal tolerances.',
         'Holding unlimited-height Class A classification, our certified teams operate specialized ultra-high-reach excavators, robotic crunchers, and diamond wire slicing units under continuous seismic telemetry. We manage the entire lifecycle from early municipal NOC acquisition and DEWA disconnection through to crushed aggregate recycling and certified ground handover.'
@@ -154,12 +154,12 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
     slug: 'industrial-demolition',
     navTitle: 'Industrial Demolition',
     heroEyebrow: 'MSA DEMOLISHING · HEAVY INDUSTRY',
-    heroTitle: 'Industrial & Plant Demolition',
+    heroTitle: 'Industrial & Plant Demolition in the UAE',
     heroDescription:
       'Turnkey deconstruction of petrochemical plants, storage silos, power generation stations, and heavy steel structures across UAE industrial hubs. Cold-cutting safety protocols, scrap metal salvage, and Trakhees-certified environmental stewardship.',
-    heroImage: '/images/demolition_heavy_shear_1791756033650.webp',
+    heroImage: '/images/industrial-demolition-heavy-shear.webp',
     sectionSubtitle: 'Heavy Industrial Scope // Plant & Asset Clearance',
-    sectionTitle: 'Industrial Demolition Services',
+    sectionTitle: 'Industrial Demolition Services in the UAE',
     sectionDescription:
       'Engineered dismantling of petrochemical refineries, cement silos, steel manufacturing plants, and heavy machinery across JAFZA, KIZAD, and UAE free zones.',
     subServices: [
@@ -167,7 +167,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'petrochemical-refinery',
         title: 'Petrochemical & Refinery Dismantling',
         subtitle: 'Process unit decommissioning, pipe rack dismantling & cold-cutting',
-        image: '/images/dubai_silo_plant_demolition_1791762286680.webp',
+        image: '/images/silo-plant-demolition-uae.webp',
         scopeDescription:
           'Specialized non-spark hydraulic shearing, cold-cutting, and certified purging for hydrocarbon processing facilities, storage terminals, and chemical transfer lines.'
       },
@@ -175,7 +175,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'silo-terminal',
         title: 'Silo & Bulk Storage Demolition',
         subtitle: 'Reinforced concrete grain, cement, and clinker storage dismantling',
-        image: '/images/controlled_implosion_sequence_1791756049767.webp',
+        image: '/images/controlled-implosion-demolition.webp',
         scopeDescription:
           'Controlled mechanical deconstruction and high-reach pneumatic crunching of tall industrial silos, aggregate bins, and automated port bulk terminal infrastructure.'
       },
@@ -183,7 +183,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'heavy-structural-steel',
         title: 'Heavy Structural Steel Felling',
         subtitle: 'High-tonnage hydraulic shear dismantling & crane pick operations',
-        image: '/images/demolition_heavy_shear_1791756033650.webp',
+        image: '/images/industrial-demolition-heavy-shear.webp',
         scopeDescription:
           'Segmented engineered unbolting and heavy hydraulic shear processing of portal frame warehouses, gantry structures, and crane runway girders.'
       },
@@ -191,7 +191,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'power-plant-decommissioning',
         title: 'Power & Substation Decommissioning',
         subtitle: 'Turbine, transformer, boiler & generator de-installation',
-        image: '/images/building_demolition_dubai_1791759699360.webp',
+        image: '/images/building-demolition-dubai.webp',
         scopeDescription:
           'Complete civil and electromechanical dismantling of thermal boilers, gas turbine halls, cooling towers, and isolated transformer sub-stations with oil recovery.'
       },
@@ -199,7 +199,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'scrap-salvage',
         title: 'Ferrous & Non-Ferrous Asset Salvage',
         subtitle: 'On-site scrap shearing, sorting, weighing & circular trading',
-        image: '/images/dubai_demolition_cleared_1791767868682.webp',
+        image: '/images/cleared-demolition-site-dubai.webp',
         scopeDescription:
           'High-volume magnetic sorting and mobile hydraulic scrap shearing converting decommissioned industrial plants into export-grade circular steel and copper.'
       },
@@ -207,7 +207,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'stack-tower-felling',
         title: 'Chimney & Flare Stack Demolition',
         subtitle: 'Controlled rigging, wire sawing & top-down mast dismantling',
-        image: '/images/structural_wire_sawing_1791759713427.webp',
+        image: '/images/diamond-wire-sawing-concrete.webp',
         scopeDescription:
           'Surgical crane-assisted sectioning and diamond cable sawing of tall industrial chimneys, flare stacks, and communication towers in close proximity to active assets.'
       },
@@ -215,7 +215,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'hazardous-abatement',
         title: 'Industrial Decontamination & Abatement',
         subtitle: 'Asbestos, refractory ceramic fiber & chemical residue management',
-        image: '/images/interior_stripout_demolition_1791759731027.webp',
+        image: '/images/interior-strip-out-dubai.webp',
         scopeDescription:
           'Licensed toxic material containment, air-tight negative pressure enclosures, and certified hazardous waste disposal under UAE Ministry of Climate Change compliance.'
       },
@@ -223,7 +223,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'active-facility-dismantling',
         title: 'Live Facility Selective Dismantling',
         subtitle: 'Zero-downtime structural removal inside operational factories',
-        image: '/images/robotic_concrete_cruncher_1791756065306.webp',
+        image: '/images/robotic-concrete-demolition.webp',
         scopeDescription:
           'Low-noise acoustic partitioning and spark-free electric robotic dismantling allowing ongoing plant operations next to active demolition bays.'
       }
@@ -270,12 +270,12 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
     slug: 'interior-stripout',
     navTitle: 'Interior Strip-Out',
     heroEyebrow: 'MSA DEMOLISHING · FIT-OUT CLEARANCE',
-    heroTitle: 'Interior Strip-Out & Architectural Demolition',
+    heroTitle: 'Interior Strip-Out & Soft Demolition in Dubai',
     heroDescription:
       'High-speed non-structural strip-out for prime retail malls, luxury hospitality, and Grade-A corporate towers across Dubai. Night-shift scheduling, acoustic shielding, zero dust migration, and turnkey bare-shell handover.',
-    heroImage: '/images/interior_stripout_demolition_1791759731027.webp',
+    heroImage: '/images/interior-strip-out-dubai.webp',
     sectionSubtitle: 'Commercial Architectural Scope // Clean Handover',
-    sectionTitle: 'Interior Strip-Out Services',
+    sectionTitle: 'Interior Strip-Out Services in Dubai',
     sectionDescription:
       'Turnkey architectural defit, MEP de-installation, screed removal, and bare-shell restoration for commercial, hospitality, and residential properties in Dubai.',
     subServices: [
@@ -283,7 +283,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'commercial-fitout',
         title: 'Commercial Office Fit-Out Strip-Out',
         subtitle: 'Turnkey tenancy defit to landlord base-build condition',
-        image: '/images/interior_stripout_demolition_1791759731027.webp',
+        image: '/images/interior-strip-out-dubai.webp',
         scopeDescription:
           'Rapid clearing of drywalls, glazed meeting pods, raised access flooring, acoustic baffles, and joinery with full MEP isolation for fast tenancy re-leasing.'
       },
@@ -291,7 +291,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'retail-mall-nightshift',
         title: 'Retail Mall Night-Shift Clearance',
         subtitle: 'Low-noise overnight strip-out in Dubai Mall & Mall of the Emirates',
-        image: '/images/building_demolition_dubai_1791759699360.webp',
+        image: '/images/building-demolition-dubai.webp',
         scopeDescription:
           'Silent dismantling, dust-sealed corridors, and freight elevator logistics completed during mall closing hours with zero disruption to adjacent flagship stores.'
       },
@@ -299,7 +299,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'mep-deinstallation',
         title: 'MEP, HVAC & Ceiling De-Installation',
         subtitle: 'Ductwork, chilled water fan coils, sprinklers & cable tray clearing',
-        image: '/images/structural_wire_sawing_1791759713427.webp',
+        image: '/images/diamond-wire-sawing-concrete.webp',
         scopeDescription:
           'Certified electrical lockout, chilled water drainage, fire sprinkler capping, and suspended ceiling grid removal by approved technicians.'
       },
@@ -307,7 +307,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'floor-finish-screed',
         title: 'Floor Screed & Epoxy Removal',
         subtitle: 'Ceramic tile lifting, terrazzo grinding & slab surface profiling',
-        image: '/images/deep_shoring_foundation_removal_1791759750345.webp',
+        image: '/images/deep-shoring-foundation-removal.webp',
         scopeDescription:
           'Pneumatic ride-on tile strippers, captive shot-blasting, and diamond planetary grinders returning concrete slabs to pristine CSP-3 adhesive-ready profiles.'
       },
@@ -315,7 +315,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'hospitality-hotel-refurb',
         title: 'Luxury Hotel Room & Lobby Defit',
         subtitle: 'Multi-floor room strip-outs for 5-star hotel refurbishments',
-        image: '/images/dubai_palm_resort_demolition_1791762297191.webp',
+        image: '/images/resort-demolition-palm-jumeirah.webp',
         scopeDescription:
           'Phased guest-room gutting, bathroom marble removal, and public area facade deconstruction maintained within strict acoustic working hours.'
       },
@@ -323,7 +323,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'escalator-lift-core',
         title: 'Escalator & Elevator Core Demolition',
         subtitle: 'Rigging and sectioning of mechanical transit cores',
-        image: '/images/robotic_concrete_cruncher_1791756065306.webp',
+        image: '/images/robotic-concrete-demolition.webp',
         scopeDescription:
           'Precision diamond stitch-drilling and gantry crane extraction of internal escalator trusses and hydraulic lift mechanisms.'
       },
@@ -331,7 +331,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'cleanroom-hospital',
         title: 'Healthcare & Clean-Room Strip-Out',
         subtitle: 'HEPA filtered containment for active medical facilities',
-        image: '/images/dubai_engineers_inspection_1791761613623.webp',
+        image: '/images/engineers-site-inspection-dubai.webp',
         scopeDescription:
           'Negative pressure containment tents, sticky floor mats, and zero-fume electric tooling ensuring zero microbial dust escape into functioning hospital wards.'
       },
@@ -339,7 +339,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'facade-glazing-removal',
         title: 'Architectural Glazing & Facade Removal',
         subtitle: 'Curtain wall dismantle and shopfront glass extraction',
-        image: '/images/faint_demolition_sketch_1791756966285.webp',
+        image: '/images/demolition-engineering-sketch.webp',
         scopeDescription:
           'Suction-lifter crane extraction of oversized laminated shopfront glass, curtain wall spandrels, and architectural aluminum canopies.'
       }
@@ -386,12 +386,12 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
     slug: 'infrastructure-demolition',
     navTitle: 'Infrastructure Demolition',
     heroEyebrow: 'MSA DEMOLISHING · CIVIL & MARITIME',
-    heroTitle: 'Infrastructure & Bridge Demolition',
+    heroTitle: 'Infrastructure & Bridge Demolition in the UAE',
     heroDescription:
       'Engineered deconstruction of highway viaducts, civil bridges, coastal marine wharves, and deep underground foundation shoring across Dubai and Abu Dhabi. Hydro-demolition, diamond wire sawing, and heavy tandem crane rigging.',
-    heroImage: '/images/dubai_flyover_viaduct_demolition_1791762226685.webp',
+    heroImage: '/images/flyover-viaduct-demolition-dubai.webp',
     sectionSubtitle: 'Civil Engineering Scope // Public Infrastructure',
-    sectionTitle: 'Infrastructure Demolition Services',
+    sectionTitle: 'Infrastructure Demolition Services in the UAE',
     sectionDescription:
       'Civil engineering deconstruction for roads, bridges, transit corridors, marine assets, and deep underground foundations throughout the UAE.',
     subServices: [
@@ -399,7 +399,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'bridge-viaduct',
         title: 'Bridge & Highway Viaduct Demolition',
         subtitle: 'Overnight flyover removal with zero RTA traffic disruption',
-        image: '/images/dubai_flyover_viaduct_demolition_1791762226685.webp',
+        image: '/images/flyover-viaduct-demolition-dubai.webp',
         scopeDescription:
           'Rapid weekend highway closures utilizing synchronized multi-crane tandem lifts and diamond wire saws to dismantle precast and post-tensioned bridge spans.'
       },
@@ -407,7 +407,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'marine-wharf',
         title: 'Marine Wharf & Quay Wall Demolition',
         subtitle: 'Coastal deconstruction, concrete jetty removal & underwater cutting',
-        image: '/images/dubai_marine_wharf_demolition_1791762216315.webp',
+        image: '/images/marine-wharf-demolition-dubai.webp',
         scopeDescription:
           'Barge-mounted heavy excavators and diamond wire saws cutting underwater reinforced concrete piers and steel tubular piles under strict marine environmental safeguards.'
       },
@@ -415,7 +415,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'deep-shoring-secant',
         title: 'Deep Shoring & Secant Wall Removal',
         subtitle: 'Basement shoring extraction and continuous diaphragm wall removal',
-        image: '/images/deep_shoring_foundation_removal_1791759750345.webp',
+        image: '/images/deep-shoring-foundation-removal.webp',
         scopeDescription:
           'Heavy hydraulic breaker and core-drilling extraction of temporary secant pile walls, soldier beams, and ground anchors for new civil developments.'
       },
@@ -423,7 +423,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'hydro-demolition',
         title: 'Hydro-Demolition & Selective Milling',
         subtitle: 'Ultra-high pressure (UHP) 3,000 bar water jet concrete removal',
-        image: '/images/structural_wire_sawing_1791759713427.webp',
+        image: '/images/diamond-wire-sawing-concrete.webp',
         scopeDescription:
           'Vibration-free concrete scarification preserving structural rebar for bridge deck refurbishments, tunnel repairs, and marine quay renovations.'
       },
@@ -431,7 +431,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'heavy-foundation-raft',
         title: 'Heavy Foundation & Raft Extraction',
         subtitle: 'Mass concrete footing removal and deep ground pile cap breaking',
-        image: '/images/building_demolition_dubai_1791759699360.webp',
+        image: '/images/building-demolition-dubai.webp',
         scopeDescription:
           'Sledge-type hydraulic breaker attachments and chemical expanding rock splitters demolishing mass concrete foundations exceeding 4 meters in depth.'
       },
@@ -439,7 +439,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'metro-rail-corridor',
         title: 'Metro Corridor & Transit Demolition',
         subtitle: 'Sub-millimeter vibration controlled civil dismantling near tracks',
-        image: '/images/dubai_plaza_intact_1791767847027.webp',
+        image: '/images/commercial-plaza-before-demolition.webp',
         scopeDescription:
           'Engineered deconstruction adjacent to live Dubai Metro viaducts, governed by real-time automated geophone arrays and optical survey prisms.'
       },
@@ -447,7 +447,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'tunnel-culvert',
         title: 'Tunnel & Box Culvert Removal',
         subtitle: 'Underground stormwater, utility tunnel & culvert breaking',
-        image: '/images/robotic_concrete_cruncher_1791756065306.webp',
+        image: '/images/robotic-concrete-demolition.webp',
         scopeDescription:
           'Confined-space robotic excavators demolishing reinforced subterranean utility passages, culverts, and pedestrian tunnels without ground subsidence.'
       },
@@ -455,7 +455,7 @@ export const ALL_SERVICES_DATA: Record<string, ServicePageData> = {
         id: 'onsite-crushing-screening',
         title: 'On-Site Aggregate Crushing & Recycling',
         subtitle: 'Mobile jaw & impact crushers producing road-base aggregate',
-        image: '/images/dubai_demolition_cleared_1791767868682.webp',
+        image: '/images/cleared-demolition-site-dubai.webp',
         scopeDescription:
           'High-throughput mobile crushing plant converting demolished civil concrete into certified sub-base gravel conforming to Dubai Municipality road specifications.'
       }

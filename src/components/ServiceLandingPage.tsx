@@ -13,6 +13,8 @@ import { ServicePageData, SubServiceItem } from '../data/servicesData';
 import { SectionFallback } from './SectionFallback';
 import { srcSetFor, CARD_SIZES } from '../utils/img';
 import { sendToWhatsApp } from '../utils/whatsapp';
+import { FaqSection } from './FaqSection';
+import { RelatedServices } from './RelatedServices';
 
 const HomeEnquirySection = lazy(() =>
   import('./HomeEnquirySection').then((m) => ({ default: m.HomeEnquirySection }))
@@ -27,6 +29,7 @@ const PortfolioSlider = lazy(() =>
 
 interface ServiceLandingPageProps {
   data: ServicePageData;
+  onNavigatePage: (pageId: string) => void;
 }
 
 const SERVICE_FORM_LABELS: Record<string, string> = {
@@ -36,7 +39,7 @@ const SERVICE_FORM_LABELS: Record<string, string> = {
   'infrastructure-demolition': 'Infrastructure Demolition'
 };
 
-export const ServiceLandingPage: React.FC<ServiceLandingPageProps> = ({ data }) => {
+export const ServiceLandingPage: React.FC<ServiceLandingPageProps> = ({ data, onNavigatePage }) => {
   // Modal states for Hero Survey
   const [isSurveyModalOpen, setIsSurveyModalOpen] = useState<boolean>(false);
   const [surveySubmitted, setSurveySubmitted] = useState<boolean>(false);
@@ -576,6 +579,12 @@ export const ServiceLandingPage: React.FC<ServiceLandingPageProps> = ({ data }) 
           </div>
         </div>
       </section>
+
+      {/* Questions customers ask (also marked up as FAQPage) */}
+      <FaqSection pageId={data.id} />
+
+      {/* Cross-links to the other service pages */}
+      <RelatedServices currentId={data.id} onNavigate={onNavigatePage} />
     </div>
   );
 };

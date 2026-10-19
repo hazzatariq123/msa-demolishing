@@ -15,7 +15,7 @@ from PIL import Image
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 SOURCE_DIR = os.path.join(ROOT, 'source-images')
-TARGET_DIRS = [os.path.join(ROOT, 'public', 'images'), os.path.join(ROOT, 'src', 'assets', 'images')]
+TARGET_DIRS = [os.path.join(ROOT, 'public', 'images')]
 QUALITY = 90
 MIN_QUALITY = 82
 PHONE_BUDGET_BYTES = 120 * 1024  # the 750 px variant is what most phones download for a hero image

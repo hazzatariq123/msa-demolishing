@@ -28,7 +28,7 @@ const DEMOLITION_STEPS: ProcessStep[] = [
   {
     step: '01',
     badge: 'PHASE 01',
-    title: 'STRUCTURAL AUDIT & HAZMAT SURVEY',
+    title: 'Structural Audit & Hazmat Survey',
     subtitle: 'Pre-Engineering & Hazardous Material Inspection',
     description:
       'Rigorous structural integrity assessment, 3D laser stability scans of load-bearing elements, and certified environmental testing for asbestos, lead, and chemical residues to formulate a zero-incident Demolition Work Plan (DWP).',
@@ -38,7 +38,7 @@ const DEMOLITION_STEPS: ProcessStep[] = [
   {
     step: '02',
     badge: 'PHASE 02',
-    title: 'MUNICIPAL PERMITS & UTILITY CAPPING',
+    title: 'Municipal Permits & Utility Capping',
     subtitle: 'Civil Defense & Multi-Utility Isolation NOCs',
     description:
       'Securing all statutory Dubai Municipality / Abu Dhabi DPM demolition permits, Civil Defense clearances, RTA road occupation NOCs, and certified physical isolation and capping of all live gas, electrical, water, and telecom lines.',
@@ -48,7 +48,7 @@ const DEMOLITION_STEPS: ProcessStep[] = [
   {
     step: '03',
     badge: 'PHASE 03',
-    title: 'SITE ENCLOSURE & DUST SUPPRESSION',
+    title: 'Site Enclosure & Dust Suppression',
     subtitle: 'Perimeter Blast Hoarding & Mist Cannons',
     description:
       'Erection of certified heavy-duty perimeter safety hoarding, anti-debris containment netting, acoustic dampening screens, and deployment of atomized high-pressure water mist cannons to guarantee 100% dust containment.',
@@ -58,7 +58,7 @@ const DEMOLITION_STEPS: ProcessStep[] = [
   {
     step: '04',
     badge: 'PHASE 04',
-    title: 'CONTROLLED PRECISION DEMOLITION',
+    title: 'Controlled Precision Demolition',
     subtitle: 'Top-Down Mechanical & High-Reach Shearing',
     description:
       'Systematic floor-by-floor mechanical deconstruction employing high-reach excavators, robotic crunchers, and hydraulic shears. Continuously monitored with real-time vibration sensors to ensure zero impact on adjacent structures.',
@@ -68,7 +68,7 @@ const DEMOLITION_STEPS: ProcessStep[] = [
   {
     step: '05',
     badge: 'PHASE 05',
-    title: 'ON-SITE CRUSHING & 95%+ RECYCLING',
+    title: 'On-Site Crushing & 95%+ Recycling',
     subtitle: 'Sustainable Circular Aggregate Recovery',
     description:
       'On-site mobile jaw crushing of reinforced concrete into certified structural road-base aggregate. High-powered electromagnetic separators recover rebar and structural steel, achieving an industry-leading >95% landfill diversion rate.',
@@ -78,7 +78,7 @@ const DEMOLITION_STEPS: ProcessStep[] = [
   {
     step: '06',
     badge: 'PHASE 06',
-    title: 'SITE REMEDIATION & FINAL HANDOVER',
+    title: 'Site Remediation & Final Handover',
     subtitle: 'Compaction Testing & Municipal Sign-Off',
     description:
       'Subgrade backfilling, laser grading, soil compaction density testing, and certified environmental clearance. We deliver the final Municipal Completion Certificate (BCC) and hand over a clean, shovel-ready site for new construction.',
@@ -127,7 +127,7 @@ export const StandardDemolitionProcess: React.FC<StandardDemolitionProcessProps>
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-neutral-950 font-sans"
           >
-            OUR STANDARD DEMOLITION PROCESS
+            Our Standard Demolition Process
           </motion.h2>
 
           {/* Subtitle */}
