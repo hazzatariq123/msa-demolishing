@@ -108,7 +108,7 @@ writeFileSync(
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
-    <title>Page not found | MSA Demolishing</title>
+    <title>Page Not Found | Return to the Homepage</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     <style>
       body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#fff;color:#171717;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;text-align:center;padding:24px}

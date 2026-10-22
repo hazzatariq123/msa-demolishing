@@ -16,7 +16,7 @@ const HOME = { name: 'Home', pageId: 'home' };
 
 export const PAGES_SEO: Record<string, PageSEOMetadata> = {
   home: {
-    title: 'MSA Demolishing | Demolition Contractor in Dubai, UAE',
+    title: 'Demolition Contractor in Dubai & UAE | Get a Free Quote',
     description:
       'Class A licensed demolition contractor in Dubai. High-reach building felling, industrial dismantling, interior strip-outs and infrastructure demolition.',
     ogImage: '/images/high-reach-building-demolition-dubai.webp',
@@ -24,7 +24,7 @@ export const PAGES_SEO: Record<string, PageSEOMetadata> = {
     breadcrumbs: [HOME]
   },
   about: {
-    title: 'About MSA Demolishing | Class A Demolition Experts UAE',
+    title: 'Licensed Demolition Engineers in Dubai | Book a Site Visit',
     description:
       'Meet MSA Wrecking & Demolition Works LLC: Class A licensed engineers delivering safe, controlled demolition and high material recovery across the UAE.',
     ogImage: '/images/msa-demolition-engineers-dubai.webp',
@@ -32,7 +32,7 @@ export const PAGES_SEO: Record<string, PageSEOMetadata> = {
     breadcrumbs: [HOME, { name: 'About Us', pageId: 'about' }]
   },
   contact: {
-    title: 'Contact MSA Demolishing | Free Site Survey in Dubai',
+    title: 'Contact Our Dubai Demolition Team | Free Quote in 24 Hours',
     description:
       'Contact MSA Demolishing in Al Qusais, Dubai. Call or WhatsApp +971 55 434 8690 for a free site survey and a written demolition quote within 24 hours.',
     ogImage: '/images/engineers-site-inspection-dubai.webp',
@@ -40,7 +40,7 @@ export const PAGES_SEO: Record<string, PageSEOMetadata> = {
     breadcrumbs: [HOME, { name: 'Contact', pageId: 'contact' }]
   },
   'building-demolition': {
-    title: 'Building Demolition in Dubai & UAE | MSA Demolishing',
+    title: 'Building Demolition in Dubai & UAE | Get a Free Quote',
     description:
       'Class A licensed building demolition in Dubai: high-reach felling, precision wire sawing and controlled teardown of towers with vibration monitoring.',
     ogImage: '/images/high-reach-building-demolition-dubai.webp',
@@ -48,7 +48,7 @@ export const PAGES_SEO: Record<string, PageSEOMetadata> = {
     breadcrumbs: [HOME, { name: 'Building Demolition', pageId: 'building-demolition' }]
   },
   'industrial-demolition': {
-    title: 'Industrial Demolition & Plant Dismantling | MSA UAE',
+    title: 'Industrial & Plant Demolition UAE | Request a Quote',
     description:
       'Turnkey industrial demolition in the UAE: refineries, silos, steel plants and power stations dismantled safely under strict permit and safety control.',
     ogImage: '/images/industrial-demolition-heavy-shear.webp',
@@ -56,7 +56,7 @@ export const PAGES_SEO: Record<string, PageSEOMetadata> = {
     breadcrumbs: [HOME, { name: 'Industrial Demolition', pageId: 'industrial-demolition' }]
   },
   'interior-stripout': {
-    title: 'Interior Strip-Out & Soft Demolition Dubai | MSA',
+    title: 'Interior Strip-Out & Soft Demolition Dubai | Book Now',
     description:
       'Commercial interior strip-out and soft demolition in Dubai: retail, offices and MEP clearance with dust control and night-shift working.',
     ogImage: '/images/interior-strip-out-dubai.webp',
@@ -64,7 +64,7 @@ export const PAGES_SEO: Record<string, PageSEOMetadata> = {
     breadcrumbs: [HOME, { name: 'Interior Strip-Out', pageId: 'interior-stripout' }]
   },
   'infrastructure-demolition': {
-    title: 'Infrastructure & Bridge Demolition UAE | MSA',
+    title: 'Bridge & Infrastructure Demolition UAE | Request a Quote',
     description:
       'Bridge, flyover and infrastructure demolition in the UAE, including viaducts, marine wharves and deep shoring removal under RTA approvals.',
     ogImage: '/images/flyover-viaduct-demolition-dubai.webp',
