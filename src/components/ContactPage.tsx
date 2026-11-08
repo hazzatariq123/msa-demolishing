@@ -4,9 +4,12 @@ import { srcSetFor } from '../utils/img';
 import { ContactInfoSection } from './ContactInfoSection';
 import { HomeEnquirySection } from './HomeEnquirySection';
 import { FaqSection } from './FaqSection';
+import { RelatedServices } from './RelatedServices';
 
 /** Dedicated contact page: the only place contact details and the enquiry form live. */
-export const ContactPage: React.FC = () => (
+export const ContactPage: React.FC<{ onNavigatePage: (pageId: string) => void }> = ({
+  onNavigatePage
+}) => (
   <div className="w-full">
     <section
       aria-label="Contact Introduction"
@@ -49,6 +52,11 @@ export const ContactPage: React.FC = () => (
 
     <ContactInfoSection />
     <HomeEnquirySection />
-    <FaqSection pageId="contact" />
+    <FaqSection pageId="contact" onNavigate={onNavigatePage} />
+    <RelatedServices
+      title="Services We Can Quote For"
+      showContactLink={false}
+      onNavigate={onNavigatePage}
+    />
   </div>
 );

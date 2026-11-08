@@ -422,11 +422,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigatePage }) => {
         />
 
         {/* 6. Simple Text Section */}
-        <SimpleTextSection />
+        <SimpleTextSection onNavigate={onNavigatePage} />
       </Suspense>
 
       {/* Questions customers ask (also marked up as FAQPage) */}
-      <FaqSection pageId="home" />
+      <FaqSection pageId="home" onNavigate={onNavigatePage} />
     </div>
   );
 };

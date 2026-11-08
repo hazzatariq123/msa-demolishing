@@ -12,6 +12,11 @@ export interface FaqItem {
 const DM = { text: 'Dubai Municipality', href: 'https://www.dm.gov.ae/' };
 const RTA = { text: 'Roads and Transport Authority (RTA)', href: 'https://www.rta.ae/' };
 const CONTACT = { text: 'contact page', href: '/contact' };
+const BUILDING = { text: 'building demolition', href: '/building-demolition' };
+const INDUSTRIAL = { text: 'industrial demolition', href: '/industrial-demolition' };
+const INTERIOR = { text: 'interior strip-out', href: '/interior-stripout' };
+const INFRASTRUCTURE = { text: 'infrastructure demolition', href: '/infrastructure-demolition' };
+const GET_QUOTE = { text: 'request a free site survey', href: '/contact' };
 
 export const FAQS: Record<string, { title: string; items: FaqItem[] }> = {
   home: {
@@ -34,7 +39,11 @@ export const FAQS: Record<string, { title: string; items: FaqItem[] }> = {
       {
         question: 'How long does a demolition project take?',
         answer: [
-          'A small interior strip-out can take a few days, while a multi-storey building can take several weeks. The exact programme depends on permits, access and the demolition method, and is set out in the method statement after our site survey.'
+          'A small ',
+          INTERIOR,
+          ' can take a few days, while ',
+          BUILDING,
+          ' of a multi-storey block can take several weeks. The exact programme depends on permits, access and the demolition method, and is set out in the method statement after our site survey.'
         ]
       },
       {
@@ -46,7 +55,9 @@ export const FAQS: Record<string, { title: string; items: FaqItem[] }> = {
       {
         question: 'What happens to the demolition waste?',
         answer: [
-          'Materials are separated on site. Concrete is crushed for reuse as aggregate, steel and other metals go for recycling, and the remaining waste is taken to licensed facilities.'
+          'Materials are separated on site. Concrete is crushed for reuse as aggregate, steel and other metals go for recycling, and the remaining waste is taken to licensed facilities. On ',
+          INDUSTRIAL,
+          ' projects, salvaged steel and equipment can help offset the cost.'
         ]
       },
       {
@@ -79,13 +90,17 @@ export const FAQS: Record<string, { title: string; items: FaqItem[] }> = {
       {
         question: 'Do you also remove foundations and basements?',
         answer: [
-          'Yes. Foundations, basement slabs and shoring can be removed as part of the same contract, so the plot is ready for the next construction stage.'
+          'Yes. Foundations, basement slabs and shoring can be removed as part of the same contract, so the plot is ready for the next construction stage. Deep shoring and secant walls are covered in detail under ',
+          INFRASTRUCTURE,
+          '.'
         ]
       },
       {
         question: 'How soon can building demolition start?',
         answer: [
-          'Work can start once the permits and utility disconnections are approved. We prepare the applications straight after the site survey to keep this time as short as possible.'
+          'Work can start once the permits and utility disconnections are approved. We prepare the applications straight after the site survey, so the sooner you ',
+          GET_QUOTE,
+          ', the sooner work can begin.'
         ]
       }
     ]
@@ -108,7 +123,9 @@ export const FAQS: Record<string, { title: string; items: FaqItem[] }> = {
       {
         question: 'What happens to the steel and equipment?',
         answer: [
-          'Structural steel, metals and reusable equipment are salvaged and recycled. Their value can help offset part of the demolition cost.'
+          'Structural steel, metals and reusable equipment are salvaged and recycled. Their value can help offset part of the demolition cost. Offices and warehouses on the same site can be cleared as ',
+          BUILDING,
+          ' under one contract.'
         ]
       },
       {
@@ -143,7 +160,9 @@ export const FAQS: Record<string, { title: string; items: FaqItem[] }> = {
       {
         question: 'What condition is the unit left in?',
         answer: [
-          'The unit is stripped back to the agreed level, usually shell and core, cleared of debris and left clean and ready for the next fit-out.'
+          'The unit is stripped back to the agreed level, usually shell and core, cleared of debris and left clean and ready for the next fit-out. If the whole building is coming down instead, see ',
+          BUILDING,
+          '.'
         ]
       }
     ]
@@ -174,7 +193,9 @@ export const FAQS: Record<string, { title: string; items: FaqItem[] }> = {
       {
         question: 'Is the concrete from infrastructure demolition recycled?',
         answer: [
-          'Yes. Concrete is crushed into aggregate that can be reused, and reinforcing steel is separated and sent for recycling.'
+          'Yes. Concrete is crushed into aggregate that can be reused, and reinforcing steel is separated and sent for recycling. The same process applies to our ',
+          INDUSTRIAL,
+          ' and building projects.'
         ]
       }
     ]
@@ -197,7 +218,11 @@ export const FAQS: Record<string, { title: string; items: FaqItem[] }> = {
       {
         question: 'What details should I send with my enquiry?',
         answer: [
-          'The site location, the type and size of the structure, your preferred timeline and a few photos if you have them. Photos can be sent on WhatsApp.'
+          'The site location, the type of work (for example ',
+          BUILDING,
+          ' or ',
+          INTERIOR,
+          '), the size of the structure, your preferred timeline and a few photos if you have them. Photos can be sent on WhatsApp.'
         ]
       }
     ]

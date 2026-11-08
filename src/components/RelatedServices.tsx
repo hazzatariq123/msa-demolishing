@@ -3,11 +3,14 @@ import { ArrowRight } from 'lucide-react';
 import { ALL_SERVICES_DATA } from '../data/servicesData';
 import { PageLink } from './PageLink';
 
-/** Cross-links each service page to the other services, with descriptive anchor text. */
+/** Links to the service pages with descriptive anchor text. On a service page it lists the other three. */
 export const RelatedServices: React.FC<{
-  currentId: string;
+  currentId?: string;
+  title?: string;
+  /** Adds a contextual link to the contact page under the cards (off on the contact page itself). */
+  showContactLink?: boolean;
   onNavigate: (pageId: string) => void;
-}> = ({ currentId, onNavigate }) => {
+}> = ({ currentId, title = 'Other Demolition Services', showContactLink = true, onNavigate }) => {
   const others = Object.values(ALL_SERVICES_DATA).filter((service) => service.id !== currentId);
 
   return (
@@ -20,30 +23,50 @@ export const RelatedServices: React.FC<{
           id="related-services-heading"
           className="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-950 mb-8"
         >
-          Other Demolition Services
+          {title}
         </h2>
-        <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <ul
+          className={`grid grid-cols-1 gap-6 ${others.length === 4 ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3'}`}
+        >
           {others.map((service) => (
             <li key={service.id}>
-              <PageLink
-                to={service.id}
-                onNavigate={onNavigate}
-                className="group flex h-full flex-col rounded-2xl border border-neutral-200 bg-white p-6 transition-colors hover:border-amber-500"
-              >
-                <span className="text-lg font-semibold text-neutral-950 group-hover:text-amber-700">
-                  {service.heroTitle}
-                </span>
-                <span className="mt-2 flex-grow text-sm text-neutral-600 leading-relaxed line-clamp-3">
+              <div className="group relative flex h-full flex-col rounded-2xl border border-neutral-200 bg-white p-6 transition-colors hover:border-amber-500 focus-within:ring-2 focus-within:ring-amber-500">
+                <h3 className="text-lg font-semibold text-neutral-950 group-hover:text-amber-700">
+                  <PageLink
+                    to={service.id}
+                    onNavigate={onNavigate}
+                    className="after:absolute after:inset-0 after:rounded-2xl focus-visible:outline-none"
+                  >
+                    {service.heroTitle}
+                  </PageLink>
+                </h3>
+                <p className="mt-2 flex-grow text-sm text-neutral-600 leading-relaxed line-clamp-3">
                   {service.heroDescription}
-                </span>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-amber-700">
+                </p>
+                <span
+                  aria-hidden="true"
+                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-amber-700"
+                >
                   {service.navTitle} services
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  <ArrowRight className="h-4 w-4" />
                 </span>
-              </PageLink>
+              </div>
             </li>
           ))}
         </ul>
+        {showContactLink && (
+          <p className="mt-8 text-neutral-700">
+            Not sure which service your project needs?{' '}
+            <PageLink
+              to="contact"
+              onNavigate={onNavigate}
+              className="font-semibold text-amber-700 underline underline-offset-2"
+            >
+              Ask our engineers for a free site survey
+            </PageLink>
+            .
+          </p>
+        )}
       </div>
     </section>
   );

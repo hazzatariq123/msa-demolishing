@@ -62,7 +62,7 @@ export default function App() {
     }
 
     if (activePage === 'contact') {
-      return <ContactPage />;
+      return <ContactPage onNavigatePage={handleNavigate} />;
     }
 
     if (activePage === 'about') {

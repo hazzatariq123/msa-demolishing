@@ -1,9 +1,14 @@
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
 import { FAQS } from '../data/faqs';
+import { PageLink } from './PageLink';
+import { pageFromPath } from '../data/routes';
 
 /** Visible FAQ for a page. Uses native <details> so it works without JavaScript and stays crawlable. */
-export const FaqSection: React.FC<{ pageId: string }> = ({ pageId }) => {
+export const FaqSection: React.FC<{ pageId: string; onNavigate?: (pageId: string) => void }> = ({
+  pageId,
+  onNavigate
+}) => {
   const faq = FAQS[pageId];
   if (!faq) return null;
 
@@ -36,6 +41,15 @@ export const FaqSection: React.FC<{ pageId: string }> = ({ pageId }) => {
                 {item.answer.map((part, index) =>
                   typeof part === 'string' ? (
                     <React.Fragment key={index}>{part}</React.Fragment>
+                  ) : part.href.startsWith('/') && onNavigate && pageFromPath(part.href) ? (
+                    <PageLink
+                      key={index}
+                      to={pageFromPath(part.href)!}
+                      onNavigate={onNavigate}
+                      className="font-medium text-amber-700 underline underline-offset-2"
+                    >
+                      {part.text}
+                    </PageLink>
                   ) : part.href.startsWith('/') ? (
                     <a
                       key={index}

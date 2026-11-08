@@ -4,6 +4,7 @@ import { PageLink } from './PageLink';
 import { ABOUT_HERO } from '../data/heroShells';
 import { sendToWhatsApp } from '../utils/whatsapp';
 import { SectionFallback } from './SectionFallback';
+import { RelatedServices } from './RelatedServices';
 
 const HomeEnquirySection = lazy(() =>
   import('./HomeEnquirySection').then((m) => ({ default: m.HomeEnquirySection }))
@@ -514,6 +515,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigatePage }) => {
         <HomeEnquirySection />
       </Suspense>
 
+      {/* Links to every service page */}
+      <RelatedServices title="Our Demolition Services" onNavigate={onNavigatePage} />
+
       {/* 6. CALL TO ACTION & EXPLORE SERVICES */}
       <section className="py-20 sm:py-24 bg-white [content-visibility:auto] [contain-intrinsic-size:auto_800px]">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
@@ -549,7 +553,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigatePage }) => {
                 onNavigate={onNavigatePage}
                 className="border border-neutral-700 hover:border-neutral-500 text-white hover:text-white px-6 py-3.5 rounded-full text-sm font-medium transition-colors text-center cursor-pointer"
               >
-                Explore Services
+                Explore Building Demolition
               </PageLink>
             </div>
           </div>

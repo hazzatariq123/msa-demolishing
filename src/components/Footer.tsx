@@ -6,11 +6,6 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ onNavigatePage }) => {
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  };
-
   const handlePageClick = (pageId: string) => {
     if (onNavigatePage) {
       onNavigatePage(pageId);
@@ -92,42 +87,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigatePage }) => {
                 >
                   About Us
                 </PageLink>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  onClick={() => scrollTo('services')}
-                  className="hover:text-neutral-950 transition-colors text-neutral-600 text-left cursor-pointer"
-                >
-                  Services
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  onClick={() => scrollTo('before-you-start')}
-                  className="hover:text-neutral-950 transition-colors text-neutral-600 text-left cursor-pointer"
-                >
-                  Pre-Demolition Audit
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  onClick={() => scrollTo('portfolio')}
-                  className="hover:text-neutral-950 transition-colors text-neutral-600 text-left cursor-pointer"
-                >
-                  Project Portfolio
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  onClick={() => scrollTo('engineering-overview')}
-                  className="hover:text-neutral-950 transition-colors text-neutral-600 text-left cursor-pointer"
-                >
-                  Technical Overview
-                </button>
               </li>
               <li>
                 <PageLink

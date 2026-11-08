@@ -9,13 +9,14 @@ import {
   Phone,
   ShieldCheck
 } from 'lucide-react';
-import { ServicePageData, SubServiceItem } from '../data/servicesData';
+import { ALL_SERVICES_DATA, ServicePageData, SubServiceItem } from '../data/servicesData';
 import { SectionFallback } from './SectionFallback';
 import { srcSetFor, CARD_SIZES } from '../utils/img';
 import { sendToWhatsApp } from '../utils/whatsapp';
 import { FaqSection } from './FaqSection';
 import { RelatedServices } from './RelatedServices';
 import { ModalPortal } from './ModalPortal';
+import { PageLink } from './PageLink';
 
 const HomeEnquirySection = lazy(() =>
   import('./HomeEnquirySection').then((m) => ({ default: m.HomeEnquirySection }))
@@ -431,6 +432,22 @@ export const ServiceLandingPage: React.FC<ServiceLandingPageProps> = ({ data, on
                       <p className="text-sm text-neutral-600 font-light mb-6">
                         {selectedSubService.scopeDescription}
                       </p>
+                      {selectedSubService.id !== data.id &&
+                        ALL_SERVICES_DATA[selectedSubService.id] && (
+                          <p className="-mt-3 mb-6 text-sm">
+                            <PageLink
+                              to={selectedSubService.id}
+                              onNavigate={(pageId) => {
+                                setSelectedSubService(null);
+                                onNavigatePage(pageId);
+                              }}
+                              className="font-semibold text-amber-700 underline underline-offset-2"
+                            >
+                              See our full {ALL_SERVICES_DATA[selectedSubService.id].navTitle}{' '}
+                              service
+                            </PageLink>
+                          </p>
+                        )}
 
                       <form onSubmit={handleSubInquirySubmit} className="space-y-3.5">
                         <div>
@@ -586,7 +603,7 @@ export const ServiceLandingPage: React.FC<ServiceLandingPageProps> = ({ data, on
       </section>
 
       {/* Questions customers ask (also marked up as FAQPage) */}
-      <FaqSection pageId={data.id} />
+      <FaqSection pageId={data.id} onNavigate={onNavigatePage} />
 
       {/* Cross-links to the other service pages */}
       <RelatedServices currentId={data.id} onNavigate={onNavigatePage} />

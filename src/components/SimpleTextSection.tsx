@@ -1,6 +1,11 @@
 import React from 'react';
+import { PageLink } from './PageLink';
 
-export const SimpleTextSection: React.FC = () => {
+const LINK = 'font-medium text-amber-700 underline underline-offset-2 hover:text-amber-800';
+
+export const SimpleTextSection: React.FC<{ onNavigate: (pageId: string) => void }> = ({
+  onNavigate
+}) => {
   return (
     <section
       id="engineering-overview"
@@ -19,8 +24,36 @@ export const SimpleTextSection: React.FC = () => {
           <p>
             Demolition in Dubai requires a specialized engineering approach governed by strict
             municipal, environmental, and infrastructure standards. As a Class A licensed demolition
-            contractor, MSA Demolishing executes complex structural deconstruction projects across
-            high-density urban corridors, industrial zones, and coastal master developments.
+            contractor,{' '}
+            <PageLink to="about" onNavigate={onNavigate} className={LINK}>
+              MSA Demolishing
+            </PageLink>{' '}
+            executes complex structural deconstruction projects across high-density urban corridors,
+            industrial zones, and coastal master developments.
+          </p>
+
+          <p>
+            Our work covers four core services:{' '}
+            <PageLink to="building-demolition" onNavigate={onNavigate} className={LINK}>
+              building demolition
+            </PageLink>{' '}
+            for towers and commercial blocks,{' '}
+            <PageLink to="industrial-demolition" onNavigate={onNavigate} className={LINK}>
+              industrial and plant demolition
+            </PageLink>
+            ,{' '}
+            <PageLink to="interior-stripout" onNavigate={onNavigate} className={LINK}>
+              interior strip-out
+            </PageLink>{' '}
+            for offices, malls and hotels, and{' '}
+            <PageLink to="infrastructure-demolition" onNavigate={onNavigate} className={LINK}>
+              bridge and infrastructure demolition
+            </PageLink>
+            . To discuss your site,{' '}
+            <PageLink to="contact" onNavigate={onNavigate} className={LINK}>
+              contact our engineers
+            </PageLink>{' '}
+            for a free survey.
           </p>
 
           <p>
