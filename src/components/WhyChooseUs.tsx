@@ -95,7 +95,7 @@ export const WhyChooseUs: React.FC = () => {
 
               {/* Bottom Image Caption Card */}
               <div className="absolute bottom-5 left-5 right-5 text-white">
-                <div className="text-[10px] font-mono uppercase tracking-widest text-amber-400 font-bold mb-1">
+                <div className="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold mb-1">
                   LICENSED PE STRUCTURAL SUPERVISION
                 </div>
                 <div className="font-serif font-bold text-lg sm:text-xl text-white mb-1 leading-snug">
@@ -144,7 +144,7 @@ export const WhyChooseUs: React.FC = () => {
             <div className="mt-8 pt-6 border-t border-neutral-200/80 flex flex-wrap items-center justify-end gap-4 text-xs font-mono text-neutral-500">
               <a
                 href="#portfolio"
-                className="text-neutral-900 font-semibold hover:text-amber-600 transition-colors flex items-center gap-1"
+                className="text-neutral-900 font-semibold hover:text-amber-600 transition-colors flex min-h-11 items-center gap-1"
               >
                 View Case Studies <ArrowRight className="w-3.5 h-3.5" />
               </a>

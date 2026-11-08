@@ -152,7 +152,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigatePage }) =>
                     >
                       <span>{item.label}</span>
                       {item.isPrimaryFeatured && (
-                        <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-amber-500 text-white font-bold">
+                        <span className="text-xs uppercase font-mono px-2 py-0.5 rounded bg-amber-500 text-white font-bold">
                           Primary
                         </span>
                       )}

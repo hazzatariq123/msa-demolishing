@@ -188,7 +188,7 @@ export const PortfolioSlider: React.FC<PortfolioSliderProps> = ({
                     {/* Meta Specs Grid */}
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 rounded-xl bg-neutral-50 border border-neutral-200 font-mono text-xs">
                       <div>
-                        <div className="text-neutral-500 uppercase text-[10px] tracking-wider mb-1">
+                        <div className="text-neutral-500 uppercase text-xs tracking-wider mb-1">
                           Scale / Height
                         </div>
                         <div className="font-bold text-neutral-900">
@@ -196,7 +196,7 @@ export const PortfolioSlider: React.FC<PortfolioSliderProps> = ({
                         </div>
                       </div>
                       <div>
-                        <div className="text-neutral-500 uppercase text-[10px] tracking-wider mb-1">
+                        <div className="text-neutral-500 uppercase text-xs tracking-wider mb-1">
                           Seismic Control
                         </div>
                         <div className="font-bold text-neutral-900">
@@ -204,7 +204,7 @@ export const PortfolioSlider: React.FC<PortfolioSliderProps> = ({
                         </div>
                       </div>
                       <div>
-                        <div className="text-neutral-500 uppercase text-[10px] tracking-wider mb-1">
+                        <div className="text-neutral-500 uppercase text-xs tracking-wider mb-1">
                           Material Circularity
                         </div>
                         <div className="font-bold text-amber-700">
@@ -212,7 +212,7 @@ export const PortfolioSlider: React.FC<PortfolioSliderProps> = ({
                         </div>
                       </div>
                       <div>
-                        <div className="text-neutral-500 uppercase text-[10px] tracking-wider mb-1">
+                        <div className="text-neutral-500 uppercase text-xs tracking-wider mb-1">
                           Time to Completion
                         </div>
                         <div className="font-bold text-neutral-900">

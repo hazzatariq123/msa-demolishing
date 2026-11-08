@@ -96,10 +96,10 @@ export const WhatYouGetBeforeYouStart: React.FC<WhatYouGetBeforeYouStartProps> =
               {/* Card Body Text */}
               <div className="p-7 sm:p-8">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-neutral-800 bg-neutral-100 px-2 py-0.5 rounded">
+                  <span className="font-mono text-xs font-bold uppercase tracking-wider text-neutral-800 bg-neutral-100 px-2 py-0.5 rounded">
                     SURVEY ACTIVE • 24H SLA
                   </span>
-                  <span className="text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded text-[10px]">
+                  <span className="text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded text-xs">
                     100% Free Visit
                   </span>
                 </div>
@@ -128,7 +128,7 @@ export const WhatYouGetBeforeYouStart: React.FC<WhatYouGetBeforeYouStartProps> =
                       if (el) el.scrollIntoView({ behavior: 'smooth' });
                     }
                   }}
-                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-neutral-950 hover:text-neutral-700 transition-colors cursor-pointer"
+                  className="inline-flex min-h-11 items-center gap-1.5 text-xs sm:text-sm font-semibold text-neutral-950 hover:text-neutral-700 transition-colors cursor-pointer"
                 >
                   <span>Request a Free Visit</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -164,10 +164,10 @@ export const WhatYouGetBeforeYouStart: React.FC<WhatYouGetBeforeYouStartProps> =
               {/* Card Body Text */}
               <div className="p-7 sm:p-8">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-neutral-800 bg-neutral-100 px-2 py-0.5 rounded">
+                  <span className="font-mono text-xs font-bold uppercase tracking-wider text-neutral-800 bg-neutral-100 px-2 py-0.5 rounded">
                     MUNICIPALITY CLEARED
                   </span>
-                  <span className="text-neutral-700 font-semibold bg-neutral-100 px-2 py-0.5 rounded text-[10px]">
+                  <span className="text-neutral-700 font-semibold bg-neutral-100 px-2 py-0.5 rounded text-xs">
                     Class A Accredited
                   </span>
                 </div>
@@ -194,7 +194,7 @@ export const WhatYouGetBeforeYouStart: React.FC<WhatYouGetBeforeYouStartProps> =
                       'We execute direct electronic submission and liaison across Dubai Municipality (DM), Roads and Transport Authority (RTA), Dubai Civil Defense (DCD), DEWA (Utility isolation clearance), and Trakhees EHS. Zero delays, full statutory liability coverage.'
                     )
                   }
-                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-neutral-950 hover:text-neutral-700 transition-colors cursor-pointer"
+                  className="inline-flex min-h-11 items-center gap-1.5 text-xs sm:text-sm font-semibold text-neutral-950 hover:text-neutral-700 transition-colors cursor-pointer"
                 >
                   <span>Learn About Permits</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -230,10 +230,10 @@ export const WhatYouGetBeforeYouStart: React.FC<WhatYouGetBeforeYouStartProps> =
               {/* Card Body Text */}
               <div className="p-7 sm:p-8">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-neutral-800 bg-neutral-100 px-2 py-0.5 rounded">
+                  <span className="font-mono text-xs font-bold uppercase tracking-wider text-neutral-800 bg-neutral-100 px-2 py-0.5 rounded">
                     UAE REGIONAL FLEET
                   </span>
-                  <span className="text-neutral-700 font-semibold bg-neutral-100 px-2 py-0.5 rounded text-[10px]">
+                  <span className="text-neutral-700 font-semibold bg-neutral-100 px-2 py-0.5 rounded text-xs">
                     7 / 7 Emirates
                   </span>
                 </div>
@@ -260,7 +260,7 @@ export const WhatYouGetBeforeYouStart: React.FC<WhatYouGetBeforeYouStartProps> =
                       'MSA Demolishing maintains authorized plant yards and registered commercial engineering classifications across all seven emirates: Dubai (DM), Abu Dhabi (DMT / Musanada), Sharjah (SEWA & SM), Ajman, Ras Al Khaimah, Umm Al Quwain, and Fujairah.'
                     )
                   }
-                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-neutral-950 hover:text-neutral-700 transition-colors cursor-pointer"
+                  className="inline-flex min-h-11 items-center gap-1.5 text-xs sm:text-sm font-semibold text-neutral-950 hover:text-neutral-700 transition-colors cursor-pointer"
                 >
                   <span>View Coverage Areas</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
